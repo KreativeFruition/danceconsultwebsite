@@ -661,6 +661,20 @@
     min-height: 44px;
     touch-action: manipulation;
   }
+
+        /* Accessible tappable area for external icons */
+        .external-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem;
+            min-width: 44px;
+            min-height: 44px;
+            cursor: pointer;
+            touch-action: manipulation;
+            pointer-events: auto;
+            -webkit-tap-highlight-color: transparent;
+        }
 </style>
 </head>
 
