@@ -2043,34 +2043,6 @@ document.addEventListener('DOMContentLoaded', function(){
     }
   }
 </style>
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
-    backdrop-filter: blur(14px);
-    background: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: #ffffff;
-    font-weight: 600;
-    padding: 14px 28px;
-    font-size: 15px;
-    border-radius: 30px;
-    z-index: 9999;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    background-image: linear-gradient(90deg, #00CFFF, #FF7A00);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-    font-family: 'Inter', sans-serif;
-  }
-
-  #danceconsult-button:hover {
-    opacity: 0.85;
-  }
-
-  @media (max-width: 768px) {
-    #danceconsult-button {
-      display: none;
-    }
-  }
 
 <button id="danceconsult-button" onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/danceconsult' }); return false;">
   Start Your 1:1 Session
