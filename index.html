@@ -6,10 +6,10 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>1:1 Dance Consult | Creative Careers Start Here</title>
 <!-- Social Sharing Preview -->
-<meta content="1:1 Dance Consult | Creative Careers Start Here" property="og:title">
-<meta content="Strategy, support, and tools for dancers, choreographers, and creative professionals ready to level up." property="og:description">
-<meta content="https://i.imgur.com/36ZkhMb.png" property="og:image"/>
-<meta content="https://kevinfrey.info/1-1-dance-consult-website-design-working-version" property="og:url"/>
+<meta content="1:1 Dance Consult | Creative Careers Start Here" property="og:title"/>
+<meta content="Strategy, support, and tools for dancers, choreographers, and creative professionals ready to level up." property="og:description"/>
+<meta content="https://i.imgur.com/36ZkhMb.png" property="og:image">
+<meta content="https://kevinfrey.info/1-1-dance-consult-website-design-working-version" property="og:url">
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="1:1 Dance Consult | Creative Careers Start Here" name="twitter:title"/>
 <meta content="Strategy, support, and tools for dancers, choreographers, and creative professionals ready to level up." name="twitter:description"/>
@@ -48,7 +48,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            
+            height: 100%;
             z-index: -10;
             opacity: 0.15;
         }
@@ -499,7 +499,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            
+            height: 100%;
             object-fit: cover;
             object-position: center top;
             /* Focus on face/upper body */
@@ -652,7 +652,14 @@
             z-index: -1;
         }
     </style>
-</meta></meta></head>
+</meta></meta>
+<style>
+.calendly-inline-widget {
+  min-height: 750px;
+  height: auto !important;
+}
+</style>
+</head>
 <body class="font-sans text-gray-800">
 <!-- Ambient background gradient -->
 <div class="ambient-background" id="ambient-background"></div>
@@ -1259,11 +1266,11 @@
 <!-- Redirect after submit -->
 <input name="_next" type="hidden" value="/?subscribed=1#newsletter"/>
 <label class="sr-only" for="nl-email">Email address</label>
-<input autocomplete="email" class="flex-1 rounded-full border border-gray-300 bg-white/80 backdrop-blur px-5 py-3 focus:outline-none focus:ring focus:ring-electricBlue/30 text-gray-800" id="nl-email" inputmode="email" name="email" placeholder="you@example.com" required="" type="email">
+<input autocomplete="email" class="flex-1 rounded-full border border-gray-300 bg-white/80 backdrop-blur px-5 py-3 focus:outline-none focus:ring focus:ring-electricBlue/30 text-gray-800" id="nl-email" inputmode="email" name="email" placeholder="you@example.com" required="" type="email"/>
 <button class="gradient-btn rounded-full px-6 py-3 font-semibold text-gray-800" type="submit">
                             Sign up
                         </button>
-</input></form>
+</form>
 <p class="mt-4 text-green-600 hidden" id="nl-thanks">Thanks—you're on the list!</p>
 <p class="mt-3 text-xs text-gray-500">Unsubscribe anytime. We'll never share your email.</p>
 </div>
@@ -2057,7 +2064,6 @@ document.addEventListener('DOMContentLoaded', function(){
     }
   }
 </style>
-    
 <button id="danceconsult-button" onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/danceconsult' }); return false;">
   Get Started
 </button>
