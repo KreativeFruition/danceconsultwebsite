@@ -654,19 +654,21 @@
     </style>
 </meta></meta>
 <style>
-  /* Hide scrollbar inside Calendly popup iframe wrapper */
-  .calendly-popup-content::-webkit-scrollbar {
-    display: none;
-  }
-
-  .calendly-popup-content {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-
-  /* Restore main page scroll */
+  /* Restore main page scrolling */
   html, body {
-    overflow: auto !important;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  /* Hide scrollbar only inside Calendly popup iframe */
+  .calendly-popup iframe {
+    overflow: hidden !important;
+    scrollbar-width: none !important;   /* Firefox */
+    -ms-overflow-style: none !important; /* Edge */
+  }
+
+  .calendly-popup iframe::-webkit-scrollbar {
+    display: none !important;  /* Chrome, Safari */
   }
 </style>
 </head>
