@@ -6,10 +6,10 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>1:1 Dance Consult | Creative Careers Start Here</title>
 <!-- Social Sharing Preview -->
-<meta content="1:1 Dance Consult | Creative Careers Start Here" property="og:title">
-<meta content="Strategy, support, and tools for dancers, choreographers, and creative professionals ready to level up." property="og:description">
-<meta content="https://i.imgur.com/36ZkhMb.png" property="og:image"/>
-<meta content="https://kevinfrey.info/1-1-dance-consult-website-design-working-version" property="og:url"/>
+<meta content="1:1 Dance Consult | Creative Careers Start Here" property="og:title"/>
+<meta content="Strategy, support, and tools for dancers, choreographers, and creative professionals ready to level up." property="og:description"/>
+<meta content="https://i.imgur.com/36ZkhMb.png" property="og:image">
+<meta content="https://kevinfrey.info/1-1-dance-consult-website-design-working-version" property="og:url">
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="1:1 Dance Consult | Creative Careers Start Here" name="twitter:title"/>
 <meta content="Strategy, support, and tools for dancers, choreographers, and creative professionals ready to level up." name="twitter:description"/>
@@ -652,7 +652,33 @@
             z-index: -1;
         }
     </style>
-</meta></meta></head>
+</meta></meta>
+<style>
+/* Hide scrollbar on Calendly modal container */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* Optional: prevent scroll bleed on the background while modal is open */
+body.modal-open #main-content {
+  filter: blur(2px);
+  pointer-events: none;
+}
+
+/* Restore scroll after modal closes */
+body:not(.modal-open) {
+  overflow: auto;
+}
+
+/* Hide scrollbars inside iframes */
+iframe {
+  scrollbar-width: none;
+}
+iframe::-webkit-scrollbar {
+  display: none;
+}
+</style>
+</head>
 <body class="font-sans text-gray-800">
 <!-- Ambient background gradient -->
 <div class="ambient-background" id="ambient-background"></div>
@@ -1259,11 +1285,11 @@
 <!-- Redirect after submit -->
 <input name="_next" type="hidden" value="/?subscribed=1#newsletter"/>
 <label class="sr-only" for="nl-email">Email address</label>
-<input autocomplete="email" class="flex-1 rounded-full border border-gray-300 bg-white/80 backdrop-blur px-5 py-3 focus:outline-none focus:ring focus:ring-electricBlue/30 text-gray-800" id="nl-email" inputmode="email" name="email" placeholder="you@example.com" required="" type="email">
+<input autocomplete="email" class="flex-1 rounded-full border border-gray-300 bg-white/80 backdrop-blur px-5 py-3 focus:outline-none focus:ring focus:ring-electricBlue/30 text-gray-800" id="nl-email" inputmode="email" name="email" placeholder="you@example.com" required="" type="email"/>
 <button class="gradient-btn rounded-full px-6 py-3 font-semibold text-gray-800" type="submit">
                             Sign up
                         </button>
-</input></form>
+</form>
 <p class="mt-4 text-green-600 hidden" id="nl-thanks">Thanks—you're on the list!</p>
 <p class="mt-3 text-xs text-gray-500">Unsubscribe anytime. We'll never share your email.</p>
 </div>
@@ -2057,7 +2083,6 @@ document.addEventListener('DOMContentLoaded', function(){
     }
   }
 </style>
-    
 <button id="danceconsult-button" onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/danceconsult' }); return false;">
   Get Started
 </button>
