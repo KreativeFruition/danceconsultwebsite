@@ -654,6 +654,7 @@
     </style>
 </meta></meta></head>
 <body class="font-sans text-gray-800">
+<div class="calendly-scrollbar-cover"></div>
 <!-- Ambient background gradient -->
 <div class="ambient-background" id="ambient-background"></div>
 <!-- Navigation -->
@@ -2059,6 +2060,22 @@ document.addEventListener('DOMContentLoaded', function(){
 
 body.calendly-popup-open {
     overflow: hidden !important;
+}
+
+.calendly-scrollbar-cover {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 18px; /* Adjust width as needed for scrollbar */
+    height: 100vh;
+    background: #fff; /* Or match your site background */
+    z-index: 99999;
+    pointer-events: none;
+    transition: opacity 0.2s;
+}
+body.calendly-popup-open .calendly-scrollbar-cover {
+    display: block;
 }
 </style>
     
