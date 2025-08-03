@@ -1,0 +1,2082 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>1:1 Dance Consult | Creative Careers Start Here</title>
+<!-- Social Sharing Preview -->
+<meta content="1:1 Dance Consult | Creative Careers Start Here" property="og:title">
+<meta content="Strategy, support, and tools for dancers, choreographers, and creative professionals ready to level up." property="og:description">
+<meta content="https://i.imgur.com/36ZkhMb.png" property="og:image"/>
+<meta content="https://kevinfrey.info/1-1-dance-consult-website-design-working-version" property="og:url"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="1:1 Dance Consult | Creative Careers Start Here" name="twitter:title"/>
+<meta content="Strategy, support, and tools for dancers, choreographers, and creative professionals ready to level up." name="twitter:description"/>
+<meta content="https://i.imgur.com/36ZkhMb.png" name="twitter:image"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        electricBlue: '#00CFFF',
+                        sunsetOrange: '#FF7A00',
+                        neonYellow: '#FFE500',
+                        brightRed: '#FF375F',
+                        hotMagenta: '#FF00FF',
+                        deepViolet: '#8A2BE2',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+<style>
+        /* Base styles */
+        body {
+            background-color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Ambient background gradient */
+        .ambient-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -10;
+            opacity: 0.15;
+        }
+
+        /* Gradient text effect */
+        .gradient-text {
+            background: linear-gradient(90deg, #00CFFF, #FF375F, #FF7A00, #FF00FF, #FFE500, #8A2BE2);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 300% auto;
+            animation: gradientShift 15s ease infinite alternate;
+        }
+
+        /* Gradient border for content blocks */
+        .gradient-border {
+            position: relative;
+            border-radius: 16px;
+            padding: 1px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+        }
+
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 16px;
+            padding: 2px;
+            background: linear-gradient(90deg, #00CFFF, #FF375F, #FF7A00, #FF00FF, #FFE500, #8A2BE2);
+            background-size: 300% auto;
+            animation: gradientShift 15s ease infinite alternate;
+            -webkit-mask:
+                linear-gradient(#fff 0 0) content-box,
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+        }
+
+        /* Circular gradient border for logo */
+        .circular-gradient-border {
+            position: relative;
+            border-radius: 50%;
+            padding: 3px;
+            background: transparent;
+            overflow: hidden;
+            width: 400px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+        }
+
+        .circular-gradient-border::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            padding: 3px;
+            background: linear-gradient(90deg, #00CFFF, #FF375F, #FF7A00, #FF00FF, #FFE500, #8A2BE2);
+            background-size: 300% auto;
+            animation: gradientShift 15s ease infinite alternate;
+            -webkit-mask:
+                linear-gradient(#fff 0 0) content-box,
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+        }
+
+        /* Photo gradient border */
+        .photo-gradient-border {
+            position: relative;
+            border-radius: 12px;
+            padding: 3px;
+            background: transparent;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .photo-gradient-border::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 12px;
+            padding: 3px;
+            background: linear-gradient(90deg, #00CFFF, #FF375F, #FF7A00, #FF00FF, #FFE500, #8A2BE2);
+            background-size: 300% auto;
+            animation: gradientShift 15s ease infinite alternate;
+            -webkit-mask:
+                linear-gradient(#fff 0 0) content-box,
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            z-index: 1;
+        }
+
+        .photo-gradient-border img {
+            border-radius: 9px;
+            position: relative;
+            z-index: 0;
+        }
+
+        /* Glass card effect */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+        }
+
+        /* Gradient button */
+        .gradient-btn {
+            position: relative;
+            border-radius: 30px;
+            background: white;
+            z-index: 1;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .gradient-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 30px;
+            padding: 2px;
+            background: linear-gradient(90deg, #00CFFF, #FF375F, #FF7A00, #FF00FF, #FFE500, #8A2BE2);
+            background-size: 300% auto;
+            animation: gradientShift 15s ease infinite alternate;
+            -webkit-mask:
+                linear-gradient(#fff 0 0) content-box,
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            z-index: -1;
+        }
+
+        .gradient-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Gradient underline */
+        .gradient-underline {
+            position: relative;
+            display: inline-block;
+        }
+
+        .gradient-underline::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -4px;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, #00CFFF, #FF375F, #FF7A00, #FF00FF, #FFE500, #8A2BE2);
+            background-size: 300% auto;
+            animation: gradientShift 15s ease infinite alternate;
+        }
+
+        /* Navigation link hover effect */
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background: linear-gradient(90deg, #00CFFF, #FF375F, #FF7A00, #FF00FF, #FFE500, #8A2BE2);
+            background-size: 300% auto;
+            animation: gradientShift 15s ease infinite alternate;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* Feature card hover effect */
+        .feature-card {
+            transition: all 0.4s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Animations */
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        .float-animation {
+            animation: float 12s ease-in-out infinite;
+        }
+
+        .float-animation-delay {
+            animation: float 15s ease-in-out 2s infinite;
+        }
+
+        /* Apple-inspired testimonial section */
+        .testimonial-container {
+            position: relative;
+            padding: 60px 0;
+        }
+
+        .testimonial-item {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+            margin-bottom: 80px;
+        }
+
+        .testimonial-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .testimonial-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-quote {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            font-weight: 400;
+            position: relative;
+        }
+
+        .testimonial-quote::before {
+            content: '"';
+            font-size: 4rem;
+            line-height: 0;
+            position: absolute;
+            top: 0.5rem;
+            left: -1.5rem;
+            opacity: 0.15;
+        }
+
+        .testimonial-author {
+            margin-top: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+        }
+
+        .testimonial-name {
+            font-weight: 600;
+        }
+
+        /* Animated gradient ring for testimonial cards */
+        .animated-gradient-ring {
+            position: relative;
+            border-radius: 1rem;
+        }
+
+        .animated-gradient-ring::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 2px;
+            background: linear-gradient(90deg, #00CFFF, #FF375F, #FF7A00, #FF00FF, #FFE500, #8A2BE2);
+            background-size: 300% auto;
+            animation: gradientShift 15s ease infinite alternate;
+            -webkit-mask:
+                linear-gradient(#fff 0 0) content-box,
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            z-index: -1;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(10px);
+            border-radius: 1rem;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+            border: 1px solid rgba(229, 231, 235, 0.6);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Focus option */
+        .focus-option {
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .focus-option:hover {
+            transform: translateY(-3px);
+        }
+
+        .focus-option.selected {
+            border-color: #00CFFF;
+            background-color: rgba(0, 207, 255, 0.05);
+        }
+
+        /* Booking process steps */
+        .process-step {
+            position: relative;
+        }
+
+        .process-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 2.5rem;
+            right: -1rem;
+            width: 2rem;
+            height: 2px;
+            background: linear-gradient(90deg, #00CFFF, #FF375F);
+            z-index: 0;
+        }
+
+        @media (max-width: 768px) {
+            .process-step:not(:last-child)::after {
+                top: auto;
+                right: auto;
+                bottom: -1rem;
+                left: 2.5rem;
+                width: 2px;
+                height: 2rem;
+            }
+        }
+
+        /* Custom select styling */
+        .custom-select {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .custom-select select {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 100%;
+            padding: 0.75rem 2.5rem 0.75rem 1rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.5rem;
+            background-color: white;
+            cursor: pointer;
+        }
+
+        .custom-select::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 1rem;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 5px solid #6b7280;
+            pointer-events: none;
+        }
+
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Consultant card */
+        .consultant-card {
+            transition: all 0.3s ease;
+        }
+
+        .consultant-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .consultant-image {
+            transition: all 0.5s ease;
+            overflow: hidden;
+        }
+
+        .consultant-card:hover .consultant-image img {
+            transform: scale(1.05);
+        }
+
+        /* Logo container responsive adjustments */
+        @media (max-width: 768px) {
+            .circular-gradient-border {
+                width: 280px;
+                height: 280px;
+            }
+        }
+
+        /* Consultant image responsive adjustments */
+        .consultant-image {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 100%;
+            /* Creates a square aspect ratio */
+            overflow: hidden;
+        }
+
+        .consultant-image img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            /* Focus on face/upper body */
+            transition: transform 0.5s ease;
+        }
+
+        /* Montana's photo specific adjustment - updated to center her better */
+        .montana-photo {
+            object-position: center top !important;
+            /* Default positioning for the new photo */
+        }
+
+        @media (min-width: 768px) {
+            .consultant-image {
+                padding-bottom: 75%;
+                /* More rectangular on desktop */
+            }
+        }
+
+        /* Intro call section styling */
+        .intro-call-section {
+            background: linear-gradient(135deg, rgba(0, 207, 255, 0.05) 0%, rgba(255, 55, 95, 0.05) 100%);
+            border-top: 1px solid rgba(0, 207, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 55, 95, 0.1);
+        }
+
+        .intro-call-icon {
+            background: linear-gradient(135deg, #00CFFF, #FF375F);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* Morphing blob animation */
+        .morphing-blob {
+            width: 180px;
+            height: 180px;
+            position: relative;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .blob {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(90deg, #00CFFF, #FF375F, #FF7A00, #FF00FF);
+            background-size: 300% auto;
+            animation: gradientShift 15s ease infinite alternate, morphBlob 20s ease-in-out infinite;
+            opacity: 0.8;
+            filter: blur(5px);
+        }
+
+        .blob-core {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: white;
+            opacity: 0.9;
+            filter: blur(2px);
+        }
+
+        .blob-text {
+            position: relative;
+            z-index: 10;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        @keyframes morphBlob {
+            0% {
+                border-radius: 50%;
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+
+            25% {
+                border-radius: 48% 52% 57% 43% / 44% 54% 46% 56%;
+                transform: translate(-50%, -50%) rotate(90deg);
+            }
+
+            50% {
+                border-radius: 54% 46% 38% 62% / 49% 45% 55% 51%;
+                transform: translate(-50%, -50%) rotate(180deg);
+            }
+
+            75% {
+                border-radius: 42% 58% 51% 49% / 55% 52% 48% 45%;
+                transform: translate(-50%, -50%) rotate(270deg);
+            }
+
+            100% {
+                border-radius: 50%;
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+
+        .pulse-animation {
+            animation: pulse 3s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(0, 207, 255, 0.4);
+            }
+
+            50% {
+                transform: scale(1);
+                box-shadow: 0 0 0 10px rgba(0, 207, 255, 0);
+            }
+
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(0, 207, 255, 0);
+            }
+        }
+
+        /* Gradient outline text */
+        .gradient-outline-text {
+            position: relative;
+            display: inline-block;
+            padding: 8px 16px;
+            margin: 12px 0;
+        }
+
+        .gradient-outline-text::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 8px;
+            padding: 2px;
+            background: linear-gradient(90deg, #00CFFF, #FF375F, #FF7A00, #FF00FF, #FFE500, #8A2BE2);
+            background-size: 300% auto;
+            animation: gradientShift 15s ease infinite alternate;
+            -webkit-mask:
+                linear-gradient(#fff 0 0) content-box,
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            z-index: -1;
+        }
+    </style>
+</meta></meta></head>
+<body class="font-sans text-gray-800">
+<!-- Ambient background gradient -->
+<div class="ambient-background" id="ambient-background"></div>
+<!-- Navigation -->
+<nav class="fixed w-full bg-white/90 backdrop-blur-xl z-50 shadow-sm">
+<div class="container mx-auto px-4 py-4">
+<!-- Logo and site name -->
+<div class="flex flex-col md:flex-row justify-between items-center">
+<a class="flex items-center mb-4 md:mb-0" href="#home">
+<div class="text-2xl font-bold whitespace-nowrap">
+<span class="gradient-text">1:1</span>
+<span class="text-gray-800"> Dance Consult</span>
+</div>
+</a>
+<!-- Desktop Navigation -->
+<div class="hidden md:flex space-x-8">
+<a class="nav-link active font-medium text-gray-800" href="#home">Home</a>
+<a class="nav-link font-medium text-gray-800" href="#about">About</a>
+<a class="nav-link font-medium text-gray-800" href="#services">Services</a>
+<a class="nav-link font-medium text-gray-800" href="#consultants">Consultants</a>
+<a class="nav-link font-medium text-gray-800" href="#booking">Book</a>
+<a class="nav-link font-medium text-gray-800" href="#testimonials">Testimonials</a>
+<a class="nav-link font-medium text-gray-800" href="#contact">Contact</a>
+</div>
+<!-- Mobile Navigation Toggle -->
+<div class="md:hidden">
+<button class="focus:outline-none text-gray-800" id="menu-toggle">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+</div>
+<!-- Mobile Navigation Menu -->
+<div class="md:hidden hidden pt-4 pb-2" id="mobile-menu">
+<div class="flex flex-col space-y-3">
+<a class="py-2 px-1 nav-link active font-medium text-gray-800" href="#home">Home</a>
+<a class="py-2 px-1 nav-link font-medium text-gray-800" href="#about">About</a>
+<a class="py-2 px-1 nav-link font-medium text-gray-800" href="#services">Services</a>
+<a class="py-2 px-1 nav-link font-medium text-gray-800" href="#consultants">Consultants</a>
+<a class="py-2 px-1 nav-link font-medium text-gray-800" href="#booking">Book</a>
+<a class="py-2 px-1 nav-link font-medium text-gray-800" href="#testimonials">Testimonials</a>
+<a class="py-2 px-1 nav-link font-medium text-gray-800" href="#contact">Contact</a>
+</div>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="pt-32 pb-20 px-4" id="home">
+<div class="container mx-auto">
+<div class="flex flex-col md:flex-row items-center justify-between">
+<div class="md:w-1/2 mb-10 md:mb-0">
+<h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                        Creative Careers<br/><span class="gradient-text">Start Here.</span>
+</h1>
+<p class="text-xl md:text-2xl text-gray-600 mb-10 max-w-lg">
+                        Strategy, support, and tools for dancers, choreographers, and creative professionals ready to
+                        level up.
+                    </p>
+<div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+<a class="gradient-btn px-8 py-3 font-semibold text-gray-800 text-center" href="#booking">
+                            Book a Consultation
+                        </a>
+<a class="px-8 py-3 border border-gray-300 rounded-full font-semibold text-gray-800 hover:bg-gray-50 transition-all text-center" href="#services">
+                            Explore Services
+                        </a>
+</div>
+</div>
+<div class="md:w-1/2">
+<div class="circular-gradient-border float-animation">
+<img alt="1:1 Dance Consult Logo" class="w-full h-full object-contain rounded-full" src="https://imgur.com/36ZkhMb.png"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- About Section (Removed left content block) -->
+<section class="py-20 px-4" id="about">
+<div class="container mx-auto">
+<div class="flex justify-center">
+<div class="max-w-2xl">
+<h2 class="text-3xl font-bold mb-6 gradient-underline inline-block">Our Mission</h2>
+<p class="text-lg text-gray-600 mb-6">
+                        At 1:1 Dance Consult, we believe that creative professionals deserve careers that are both
+                        artistically fulfilling and financially sustainable.
+                    </p>
+<p class="text-lg text-gray-600 mb-8">
+                        Our mission is to provide the strategies, tools, and support that bridge the gap between
+                        artistic excellence and business success.
+                    </p>
+<div class="space-y-4">
+<div class="flex items-start">
+<div class="w-10 h-10 rounded-full bg-electricBlue/10 flex items-center justify-center mt-1 mr-4 flex-shrink-0">
+<svg class="w-5 h-5 text-electricBlue" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<p class="text-gray-600">
+                                Personalized guidance from industry experts who understand the unique challenges of
+                                creative careers
+                            </p>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 rounded-full bg-sunsetOrange/10 flex items-center justify-center mt-1 mr-4 flex-shrink-0">
+<svg class="w-5 h-5 text-sunsetOrange" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<p class="text-gray-600">
+                                Practical tools and resources designed specifically for dancers, choreographers, and
+                                creative entrepreneurs
+                            </p>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 rounded-full bg-deepViolet/10 flex items-center justify-center mt-1 mr-4 flex-shrink-0">
+<svg class="w-5 h-5 text-deepViolet" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<p class="text-gray-600">
+                                Cutting-edge AI tools that help you work smarter, not harder, in your creative practice
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-20 px-4 bg-gray-50" id="services">
+<div class="container mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold mb-4 gradient-underline inline-block">Our Services</h2>
+<p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Tailored support to help you navigate your creative career with confidence and clarity.
+                </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Service 1 -->
+<div class="gradient-border feature-card">
+<div class="glass-card p-8 h-full">
+<div class="w-16 h-16 rounded-full bg-electricBlue/10 flex items-center justify-center mb-6">
+<svg class="w-8 h-8 text-electricBlue" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</div>
+<h3 class="text-xl font-semibold mb-3">1:1 Coaching</h3>
+<p class="text-gray-600">
+                            Personalized guidance to help you navigate your creative career with confidence and clarity.
+                        </p>
+</div>
+</div>
+<!-- Service 2 -->
+<div class="gradient-border feature-card">
+<div class="glass-card p-8 h-full">
+<div class="w-16 h-16 rounded-full bg-brightRed/10 flex items-center justify-center mb-6">
+<svg class="w-8 h-8 text-brightRed" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</div>
+<h3 class="text-xl font-semibold mb-3">Digital Resources</h3>
+<p class="text-gray-600">
+                            Expert guides and tools designed to elevate your skills and expand your professional
+                            toolkit.
+                        </p>
+</div>
+</div>
+<!-- Service 3 -->
+<div class="gradient-border feature-card">
+<div class="glass-card p-8 h-full">
+<div class="w-16 h-16 rounded-full bg-hotMagenta/10 flex items-center justify-center mb-6">
+<svg class="w-8 h-8 text-hotMagenta" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</div>
+<h3 class="text-xl font-semibold mb-3">AI Tools</h3>
+<p class="text-gray-600">
+                            Cutting-edge technology to streamline your workflow and unlock new creative possibilities.
+                        </p>
+</div>
+</div>
+</div>
+<div class="text-center mt-12">
+<a class="gradient-btn gradient-outline-btn px-8 py-3 font-semibold text-gray-800 text-center rounded-full" href="#booking">
+                    Book a Consultation
+                </a>
+</div>
+</div>
+</section>
+<!-- Consultants Section (Updated with website links) -->
+<section class="py-20 px-4" id="consultants">
+<div class="container mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold mb-4 gradient-underline inline-block">Meet Our Consultants</h2>
+<p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Industry experts with real-world experience ready to guide your creative journey.
+                </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Consultant 1: Kevin Frey (Updated with correct website link) -->
+<div class="consultant-card">
+<div class="gradient-border">
+<div class="glass-card p-6">
+<div class="consultant-image mb-6 photo-gradient-border">
+<img alt="Kevin Frey" class="consultant-photo" src="https://imgur.com/hZ7jR7E.jpg"/>
+</div>
+<h3 class="text-xl font-semibold mb-2">Kevin Frey</h3>
+<p class="text-electricBlue font-medium mb-4">Founder &amp; Lead Consultant</p>
+<p class="text-gray-600 mb-6">
+                                Kevin Frey is the powerhouse behind 1:1 Dance Consult. With 15+ years in entertainment,
+                                he's danced for icons like Lady Gaga, Taylor Swift, Ariana Grande, and J Balvin—and
+                                directed high-impact projects across stage and screen. As founder, Kevin brings
+                                unmatched industry insight and sharp creative strategy to every session. He helps
+                                dancers, choreographers, and creatives break through plateaus, pivot with purpose, and
+                                elevate their careers. With his guidance, clients don't just dream bigger—they move
+                                smarter.
+                            </p>
+<div class="flex space-x-3">
+<a class="text-gray-600 hover:text-electricBlue transition-colors" href="https://www.KevinFrey.info" target="_blank">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"></path>
+</svg>
+</a>
+<a class="text-gray-600 hover:text-electricBlue transition-colors" href="https://www.facebook.com/Kev1nFr3y/" target="_blank">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z">
+</path>
+</svg>
+</a>
+<a class="text-gray-600 hover:text-electricBlue transition-colors" href="https://www.instagram.com/kevin.fr3y/" target="_blank">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z">
+</path>
+</svg>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Consultant 2: Montana Efaw (Updated with website link) -->
+<div class="consultant-card">
+<div class="gradient-border">
+<div class="glass-card p-6">
+<div class="consultant-image mb-6 photo-gradient-border">
+<img alt="Montana Efaw" class="consultant-photo montana-photo" src="https://imgur.com/zONKtx9.jpg"/>
+</div>
+<h3 class="text-xl font-semibold mb-2">Montana Efaw</h3>
+<p class="text-brightRed font-medium mb-4">Choreographer + Movement Director</p>
+<p class="text-gray-600 mb-6">
+                                With over a decade of high‑pressure choreography and movement direction—from global
+                                tours and music videos to award shows—Montana empowers clients to fully own their stage
+                                presence. As Lady Gaga's longtime movement collaborator and key creative behind rising
+                                stars like Maya B, Allison Ponthier &amp; SAINT JHN, she brings strategic artistic
+                                development and performance mastery to every project. Clients gain next‑level
+                                confidence, finely tuned movement identity, and stage‑ready storytelling through her
+                                elite coaching and director‑led vision.
+                            </p>
+<div class="flex space-x-3">
+<a class="text-gray-600 hover:text-brightRed transition-colors" href="https://www.montanaefaw.com/" target="_blank">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"></path>
+</svg>
+</a>
+<a class="text-gray-600 hover:text-brightRed transition-colors" href="https://www.instagram.com/montanaefaw/" target="_blank">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z">
+</path>
+</svg>
+</a>
+<a class="text-gray-600 hover:text-brightRed transition-colors" href="https://www.tiktok.com/@montanaefaw503" target="_blank">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"></path>
+</svg>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Consultant 3: Caroline Diamond (Updated with website link) -->
+<div class="consultant-card">
+<div class="gradient-border">
+<div class="glass-card p-6">
+<div class="consultant-image mb-6 photo-gradient-border">
+<img alt="Caroline Diamond" class="consultant-photo" src="https://imgur.com/qIpkkpu.jpg"/>
+</div>
+<h3 class="text-xl font-semibold mb-2">Caroline Diamond</h3>
+<p class="text-hotMagenta font-medium mb-4">Multi-Hyphenate Artist</p>
+<p class="text-gray-600 mb-6">
+                                Caroline is a multi-hyphenate artist with credits including A Star Is Born, The L Word:
+                                Gen Q, and Lady Gaga's Super Bowl Halftime Show. With a background in choreography,
+                                movement coaching, styling, and certified makeup artistry, she helps clients align every
+                                part of their creative identity—from stage presence to camera-ready looks. She's also
+                                the creator and host of SOYEAH The Podcast, where creativity and real talk collide.
+                                Whether you're prepping for an audition, shoot, or building a brand, Caroline brings
+                                expert guidance and vision to help you show up fully expressed.
+                            </p>
+<div class="flex space-x-3">
+<a class="text-gray-600 hover:text-hotMagenta transition-colors" href="https://www.carolinemdiamond.com/" target="_blank">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"></path>
+</svg>
+</a>
+<a class="text-gray-600 hover:text-hotMagenta transition-colors" href="https://www.instagram.com/carolinemdiamond/" target="_blank">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z">
+</path>
+</svg>
+</a>
+<a class="text-gray-600 hover:text-hotMagenta transition-colors" href="https://www.youtube.com/@carolinemdiamond" target="_blank">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path>
+</svg>
+</a>
+<a class="text-gray-600 hover:text-hotMagenta transition-colors" href="https://www.tiktok.com/@carolinemdiamond" target="_blank">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"></path>
+</svg>
+</a>
+<a class="text-gray-600 hover:text-hotMagenta transition-colors" href="https://www.instagram.com/reddiamondmakeup/" target="_blank">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z">
+</path>
+</svg>
+</a>
+<a class="text-gray-600 hover:text-hotMagenta transition-colors" href="https://www.instagram.com/soyeahthepodcast/" target="_blank">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z">
+</path>
+</svg>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Booking Section -->
+<section class="py-20 px-4 bg-gray-50" id="booking">
+<div class="container mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold mb-4 gradient-underline inline-block">Book Your Session</h2>
+<p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Take the first step toward a more fulfilling and sustainable creative career.
+                </p>
+</div>
+<!-- How It Works Section -->
+<div class="mb-16">
+<h3 class="text-2xl font-bold mb-8 text-center">How It Works</h3>
+<div class="flex flex-col md:flex-row justify-center items-start space-y-8 md:space-y-0 md:space-x-8">
+<!-- Step 1 -->
+<div class="process-step flex flex-col items-center text-center md:w-1/3">
+<div class="w-16 h-16 rounded-full bg-electricBlue/10 flex items-center justify-center mb-4">
+<svg class="w-8 h-8 text-electricBlue" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</div>
+<h4 class="text-lg font-semibold mb-2">Choose Your Focus</h4>
+<p class="text-gray-600">
+                            Select the area where you'd like guidance and support for your creative career.
+                        </p>
+</div>
+<!-- Step 2 -->
+<div class="process-step flex flex-col items-center text-center md:w-1/3">
+<div class="w-16 h-16 rounded-full bg-brightRed/10 flex items-center justify-center mb-4">
+<svg class="w-8 h-8 text-brightRed" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</div>
+<h4 class="text-lg font-semibold mb-2">Select a Consultant</h4>
+<p class="text-gray-600">
+                            Choose the industry expert who best matches your needs and goals.
+                        </p>
+</div>
+<!-- Step 3 -->
+<div class="process-step flex flex-col items-center text-center md:w-1/3">
+<div class="w-16 h-16 rounded-full bg-hotMagenta/10 flex items-center justify-center mb-4">
+<svg class="w-8 h-8 text-hotMagenta" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</div>
+<h4 class="text-lg font-semibold mb-2">Schedule Your Call</h4>
+<p class="text-gray-600">
+                            Book a time that works for you and prepare for a transformative conversation.
+                        </p>
+</div>
+</div>
+</div>
+<!-- Booking Form Section -->
+<div class="max-w-4xl mx-auto">
+<div class="gradient-border">
+<div class="glass-card p-8">
+<h3 class="text-2xl font-bold mb-6 text-center">Book Your Session</h3>
+<!-- Focus Options -->
+<div class="mb-8">
+<h4 class="text-lg font-semibold mb-4">1. Choose Your Focus</h4>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Focus Option 1 -->
+<div class="focus-option p-4 rounded-lg border border-gray-200" data-focus="career-strategy">
+<div class="w-12 h-12 rounded-full bg-electricBlue/10 flex items-center justify-center mb-3">
+<svg class="w-6 h-6 text-electricBlue" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</div>
+<h5 class="font-medium mb-1">Career Strategy</h5>
+<p class="text-sm text-gray-500">
+                                        Navigate your next career move with confidence
+                                    </p>
+</div>
+<!-- Focus Option 2 -->
+<div class="focus-option p-4 rounded-lg border border-gray-200" data-focus="audition-prep">
+<div class="w-12 h-12 rounded-full bg-brightRed/10 flex items-center justify-center mb-3">
+<svg class="w-6 h-6 text-brightRed" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</div>
+<h5 class="font-medium mb-1">Audition Prep</h5>
+<p class="text-sm text-gray-500">
+                                        Prepare for success in your next audition
+                                    </p>
+</div>
+<!-- Focus Option 3 -->
+<div class="focus-option p-4 rounded-lg border border-gray-200" data-focus="business-development">
+<div class="w-12 h-12 rounded-full bg-hotMagenta/10 flex items-center justify-center mb-3">
+<svg class="w-6 h-6 text-hotMagenta" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</div>
+<h5 class="font-medium mb-1">Business Development</h5>
+<p class="text-sm text-gray-500">
+                                        Build a sustainable business model for your creative work
+                                    </p>
+</div>
+<!-- Focus Option 4 -->
+<div class="focus-option p-4 rounded-lg border border-gray-200" data-focus="digital-marketing">
+<div class="w-12 h-12 rounded-full bg-neonYellow/10 flex items-center justify-center mb-3">
+<svg class="w-6 h-6 text-neonYellow" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</div>
+<h5 class="font-medium mb-1">Digital Marketing</h5>
+<p class="text-sm text-gray-500">
+                                        Expand your reach and build your online presence
+                                    </p>
+</div>
+</div>
+</div>
+<!-- Consultant Selection (Updated with actual consultants) -->
+<div class="mb-8">
+<h4 class="text-lg font-semibold mb-4">2. Choose Your Consultant</h4>
+<div class="custom-select">
+<select class="focus:outline-none focus:ring-2 focus:ring-electricBlue focus:border-transparent" id="consultant-select">
+<option disabled="" selected="" value="">Select a consultant</option>
+<option value="kevin-frey">Kevin Frey - Founder &amp; Lead Consultant</option>
+<option value="montana-efaw">Montana Efaw - Choreographer + Movement Director
+                                    </option>
+<option value="caroline-diamond">Caroline Diamond - Multi-Hyphenate Artist</option>
+</select>
+</div>
+</div>
+<!-- Book Button -->
+<div class="text-center">
+<a class="gradient-btn px-8 py-3 font-semibold text-gray-800 inline-block" href="#" id="calendly-button" onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/danceconsult' }); return false;" target="_blank">
+                                Book Now
+                            </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Intro Call Section (UPDATED with morphing blob and gradient text) -->
+<section class="py-16 px-4 intro-call-section" id="intro-call">
+<div class="container mx-auto">
+<div class="max-w-4xl mx-auto">
+<div class="gradient-border">
+<div class="glass-card p-8">
+<div class="flex flex-col md:flex-row items-center">
+<div class="md:w-1/3 mb-6 md:mb-0">
+<div class="morphing-blob">
+<div class="blob"></div>
+<div class="blob-core"></div>
+<div class="blob-text gradient-text">1:1</div>
+</div>
+</div>
+<div class="md:w-2/3 md:pl-8 text-center">
+<h3 class="text-2xl font-bold mb-4">Not Sure Where to Start?</h3>
+<p class="text-lg text-gray-600 mb-4">
+                                    Still wondering if 1:1 Dance Consult is the right step for your career? Schedule a
+                                    free 5-minute intro call to explore all the possibilities we can offer you.
+                                </p>
+<div class="mb-6">
+<span class="text-xl font-bold gradient-text">No Commitment, Just
+                                        Conversation</span>
+</div>
+<div class="mt-2">
+<a class="gradient-btn px-8 py-3 font-semibold text-gray-800 inline-block rounded-full" href="#" onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/danceconsult/intro' }); return false;" target="_blank">
+                                        Schedule a Quick Chat
+                                    </a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials Section -->
+<section class="py-20 px-4" id="testimonials">
+<div class="container mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold mb-4 gradient-underline inline-block">What Our Clients Say</h2>
+<p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Hear from creative professionals who have transformed their careers with our guidance.
+                </p>
+</div>
+<!-- Testimonials Carousel Container -->
+<div class="max-w-4xl mx-auto" id="testimonials-carousel">
+<!-- Carousel will be rendered here by JavaScript -->
+</div>
+<!-- Fallback for users without JavaScript -->
+<noscript>
+<div class="max-w-4xl mx-auto space-y-8">
+<div class="animated-gradient-ring">
+<div class="testimonial-card p-8 md:p-10">
+<p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
+                                "My session with Kevin was exactly what I needed! He was thoughtful, intentional, and
+                                encouraging. He not only helped me map out my next steps as a dancer but made me feel
+                                truly seen as an artist. I left with clarity, confidence, and motivation to keep growing
+                                under his mentorship."
+                            </p>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-electricBlue/10 flex items-center justify-center flex-shrink-0">
+<span class="text-electricBlue font-semibold text-sm">GH</span>
+</div>
+<div>
+<p class="font-semibold text-gray-800">Gabriella Ha</p>
+</div>
+</div>
+</div>
+</div>
+<div class="animated-gradient-ring">
+<div class="testimonial-card p-8 md:p-10">
+<p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
+                                "I absolutely loved my 1:1 session with Kevin! His feedback was extremely personal and
+                                helped push me toward my career goals. I learned so much about myself and the industry.
+                                You can tell he genuinely cares about supporting others—and I can't wait for my next
+                                session!"
+                            </p>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-brightRed/10 flex items-center justify-center flex-shrink-0">
+<span class="text-brightRed font-semibold text-sm">MK</span>
+</div>
+<div>
+<p class="font-semibold text-gray-800">Megan Kaplan</p>
+</div>
+</div>
+</div>
+</div>
+<div class="animated-gradient-ring">
+<div class="testimonial-card p-8 md:p-10">
+<p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
+                                "From interview and improv prep to goal-setting, mindset, and dance industry
+                                mentorship—I learned so much working with Kevin and truly felt the difference this
+                                season. He helped me get in the right headspace, and I'm so proud of the growth I've
+                                made. If you're a dancer without an industry mentor yet—trust me, you need 1:1 Dance
+                                Consult in your corner. It's a game-changer."
+                            </p>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-hotMagenta/10 flex items-center justify-center flex-shrink-0">
+<span class="text-hotMagenta font-semibold text-sm">AJ</span>
+</div>
+<div>
+<p class="font-semibold text-gray-800">Ace Jennings</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</noscript>
+</div>
+</section>
+<!-- Newsletter Section -->
+<section class="py-20 px-4" id="newsletter">
+<div class="container mx-auto max-w-3xl">
+<div class="animated-gradient-ring rounded-2xl p-1">
+<div class="testimonial-card rounded-2xl bg-white/70 backdrop-blur-md border border-gray-200/60 shadow-[0_8px_30px_rgba(0,0,0,0.06)] px-6 py-8 md:px-10 md:py-12 text-center">
+<h3 class="text-2xl md:text-3xl font-semibold mb-3">Want to stay up to date?</h3>
+<p class="text-gray-600 mb-8 max-w-2xl mx-auto">Occasional insights, tools, and updates for creative
+                        careers. No spam—ever.</p>
+<form action="https://formspree.io/f/mblkkpwa" aria-label="Newsletter sign-up" class="mx-auto flex flex-col sm:flex-row items-stretch gap-3 max-w-xl" method="POST">
+<!-- Honeypot to reduce spam -->
+<input autocomplete="off" class="hidden" name="website" tabindex="-1" type="text"/>
+<!-- Redirect after submit -->
+<input name="_next" type="hidden" value="/?subscribed=1#newsletter"/>
+<label class="sr-only" for="nl-email">Email address</label>
+<input autocomplete="email" class="flex-1 rounded-full border border-gray-300 bg-white/80 backdrop-blur px-5 py-3 focus:outline-none focus:ring focus:ring-electricBlue/30 text-gray-800" id="nl-email" inputmode="email" name="email" placeholder="you@example.com" required="" type="email">
+<button class="gradient-btn rounded-full px-6 py-3 font-semibold text-gray-800" type="submit">
+                            Sign up
+                        </button>
+</input></form>
+<p class="mt-4 text-green-600 hidden" id="nl-thanks">Thanks—you're on the list!</p>
+<p class="mt-3 text-xs text-gray-500">Unsubscribe anytime. We'll never share your email.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-20 px-4 bg-gray-50" id="contact">
+<div class="container mx-auto">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-bold mb-4 gradient-underline inline-block">Get in Touch</h2>
+<p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Have questions? We're here to help. Reach out to our team for support.
+                </p>
+</div>
+<div class="max-w-4xl mx-auto">
+<div class="gradient-border">
+<div class="glass-card p-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div>
+<h3 class="text-xl font-semibold mb-6">Contact Information</h3>
+<div class="space-y-4 mb-8">
+<div class="flex items-center">
+<div class="w-10 h-10 rounded-full bg-electricBlue/10 flex items-center justify-center mr-4">
+<svg class="w-5 h-5 text-electricBlue" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</div>
+<span class="text-gray-600">1.1.dance.consult@gmail.com</span>
+</div>
+<div class="flex items-center">
+<div class="w-10 h-10 rounded-full bg-brightRed/10 flex items-center justify-center mr-4">
+<svg class="w-5 h-5 text-brightRed" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+</path>
+</svg>
+</div>
+<span class="text-gray-600">+1 (909) 588-6577</span>
+</div>
+</div>
+<h3 class="text-xl font-semibold mb-4">Follow Us</h3>
+<div class="flex space-x-4">
+<a class="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-gray-50 transition-colors duration-300 text-gray-600 hover:text-electricBlue shadow-sm" href="https://www.facebook.com/1on1consult/" target="_blank">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z">
+</path>
+</svg>
+</a>
+<a class="w-10 h-10 rounded-full bg-white flex items-center justify-center hover:bg-gray-50 transition-colors duration-300 text-gray-600 hover:text-brightRed shadow-sm" href="https://www.instagram.com/dance.consult/" target="_blank">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z">
+</path>
+</svg>
+</a>
+</div>
+</div>
+<div>
+<form id="contact-form">
+<div class="mb-4">
+<label class="block text-sm font-medium text-gray-600 mb-1" for="name">Name</label>
+<input class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-electricBlue focus:border-transparent" id="name" type="text"/>
+</div>
+<div class="mb-4">
+<label class="block text-sm font-medium text-gray-600 mb-1" for="email">Email</label>
+<input class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-electricBlue focus:border-transparent" id="email" type="email"/>
+</div>
+<div class="mb-4">
+<label class="block text-sm font-medium text-gray-600 mb-1" for="subject">Subject</label>
+<input class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-electricBlue focus:border-transparent" id="subject" type="text"/>
+</div>
+<div class="mb-6">
+<label class="block text-sm font-medium text-gray-600 mb-1" for="message">Message</label>
+<textarea class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-electricBlue focus:border-transparent" id="message" rows="4"></textarea>
+</div>
+<button class="gradient-btn px-6 py-3 font-semibold text-gray-800" id="send-message-btn" type="button">
+                                        Send Message
+                                    </button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="py-12 px-4 bg-gray-50">
+<div class="container mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-6 md:mb-0">
+<div class="text-2xl font-bold">
+<span class="gradient-text">1:1</span>
+<span class="text-gray-800"> Dance Consult</span>
+</div>
+<p class="text-gray-600 mt-2">Creative Careers<br/>Start Here</p>
+</div>
+<div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8">
+<a class="text-gray-600 hover:text-gray-800 transition-colors" href="#home">Home</a>
+<a class="text-gray-600 hover:text-gray-800 transition-colors" href="#about">About</a>
+<a class="text-gray-600 hover:text-gray-800 transition-colors" href="#services">Services</a>
+<a class="text-gray-600 hover:text-gray-800 transition-colors" href="#consultants">Consultants</a>
+<a class="text-gray-600 hover:text-gray-800 transition-colors" href="#booking">Book</a>
+<a class="text-gray-600 hover:text-gray-800 transition-colors" href="#testimonials">Testimonials</a>
+<a class="text-gray-600 hover:text-gray-800 transition-colors" href="#contact">Contact</a>
+</div>
+</div>
+<div class="border-t border-gray-200 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-500 text-sm mb-4 md:mb-0">© 2025 1:1 Dance Consult. All rights reserved.</p>
+<div class="flex space-x-4">
+<a class="text-gray-500 hover:text-gray-800 transition-colors text-sm" href="#">Privacy Policy</a>
+<a class="text-gray-500 hover:text-gray-800 transition-colors text-sm" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Ambient background gradient
+        const createAmbientBackground = () => {
+            const canvas = document.createElement('canvas');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            const ctx = canvas.getContext('2d');
+            const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+
+            gradient.addColorStop(0, '#00CFFF20');
+            gradient.addColorStop(0.2, '#FF375F20');
+            gradient.addColorStop(0.4, '#FF7A0020');
+            gradient.addColorStop(0.6, '#FF00FF20');
+            gradient.addColorStop(0.8, '#FFE50020');
+            gradient.addColorStop(1, '#8A2BE220');
+
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            const ambientBg = document.getElementById('ambient-background');
+            ambientBg.style.backgroundImage = `url(${canvas.toDataURL()})`;
+        };
+
+        createAmbientBackground();
+        window.addEventListener('resize', createAmbientBackground);
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Focus option selection
+        const focusOptions = document.querySelectorAll('.focus-option');
+        let selectedFocus = null;
+
+        focusOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                // Remove selected class from all options
+                focusOptions.forEach(opt => opt.classList.remove('selected'));
+
+                // Add selected class to clicked option
+                option.classList.add('selected');
+
+                // Store selected focus
+                selectedFocus = option.dataset.focus;
+
+                // Update booking URL with selected focus
+                updateBookingUrl();
+            });
+        });
+
+        // Consultant selection
+        const consultantSelect = document.getElementById('consultant-select');
+        let selectedConsultant = null;
+
+        consultantSelect.addEventListener('change', () => {
+            selectedConsultant = consultantSelect.value;
+
+            // Update booking URL with selected consultant
+            updateBookingUrl();
+        });
+
+        // Update booking URL based on selections
+        function updateBookingUrl() {
+            const bookButton = document.getElementById('calendly-button');
+            let baseUrl = 'https://www.calendly.com/danceconsult';
+
+            // Add parameters if selections are made
+            if (selectedFocus || selectedConsultant) {
+                baseUrl += '?';
+
+                if (selectedFocus) {
+                    baseUrl += `focus=${selectedFocus}`;
+                }
+
+                if (selectedConsultant) {
+                    baseUrl += selectedFocus ? `&consultant=${selectedConsultant}` : `consultant=${selectedConsultant}`;
+                }
+            }
+
+            bookButton.href = baseUrl;
+        }
+
+        // Contact form submission
+        const sendMessageBtn = document.getElementById('send-message-btn');
+
+        sendMessageBtn.addEventListener('click', () => {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            // Simple validation
+            if (!name || !email || !subject || !message) {
+                alert('Please fill in all fields.');
+                return;
+            }
+
+            // In a real implementation, you would send this data to a server
+            // For now, just show a success message
+            alert('Thank you for your message! We will get back to you soon.');
+
+            // Clear the form
+            document.getElementById('contact-form').reset();
+        });
+
+        // Apple-style Testimonials Carousel
+        document.addEventListener('DOMContentLoaded', function () {
+            // Testimonials data ordered for maximum conversion impact
+            // Strategy: Lead with clear outcomes → social proof variety → empowerment finale
+            const TESTIMONIALS = [
+                // Lead with clear, specific outcomes and transformation
+                {
+                    name: "Gabriella Ha",
+                    quote: "My session with Kevin was exactly what I needed! He was thoughtful, intentional, and encouraging. He not only helped me map out my next steps as a dancer but made me feel truly seen as an artist. I left with clarity, confidence, and motivation to keep growing under his mentorship."
+                },
+                {
+                    name: "Megan Kaplan",
+                    quote: "I absolutely loved my 1:1 session with Kevin! His feedback was extremely personal and helped push me toward my career goals. I learned so much about myself and the industry. You can tell he genuinely cares about supporting others—and I can't wait for my next session!"
+                },
+                // Add professional credibility and industry insight
+                {
+                    name: "Ploy Vilawan",
+                    quote: "I've had such a great experience working with Kevin! I've learned so much about the LA dance industry and what it really takes to go pro. He gave me the space to take charge of my own career, which meant a lot as a young dancer. His feedback on social media and career steps was super helpful. Highly recommend if you're serious about dancing professionally!"
+                },
+                // Show transformation and breakthrough
+                {
+                    name: "Natalie Jardine",
+                    quote: "After years of feeling creatively blocked, working with Kevin has completely transformed my mindset and workflow. He's helped me tap into a side of my creativity I didn't even know existed. Kevin is incredibly knowledgeable about the dance industry and ahead of the curve with AI and tech. Working with him has been one of the best decisions I've made for my growth as an artist."
+                },
+                // Add emotional connection and broader appeal
+                {
+                    name: "Christos Tsiantoulas",
+                    quote: "In all honesty, Kevin came into my life at a time when I didn't realize how much I needed someone like him. He's all ears when it comes to talking about goals and dreams, and he's so knowledgeable about every facet of the entertainment industry—not just dance. Every time we talk, everything feels more possible. He helps me reach further than I thought I could."
+                },
+                // Social proof from different perspectives
+                {
+                    name: "Aasha Beharry",
+                    quote: "Kevin has so much passion. His wise words and inspiring thoughts are so helpful—answering every question without missing a single detail. These sessions open new doors to amazing ideas and bright futures. I recommend them to everyone—they're truly incredible!"
+                },
+                // Include parent perspective for broader credibility
+                {
+                    name: "Lorena Rabago",
+                    quote: "Aneles left the call inspired and even more excited about her future in dance. It's not every day you meet someone who instantly makes a young artist feel seen, supported, and capable of achieving great things."
+                },
+                // Professional development and mentorship value
+                {
+                    name: "Dobbin Pinkney",
+                    quote: "A few years ago, I had the incredible opportunity to train under Kevin at The Nexus Dance Experience. Becoming an Elite Protégé was always a dream, and Kevin helped make that a reality. His guidance pushed me beyond my limits and helped me become a stronger, more confident dancer. I'm forever grateful for the foundation he helped me build."
+                },
+                // End with strong empowerment and game-changer messaging
+                {
+                    name: "Ace Jennings",
+                    quote: "From interview and improv prep to goal-setting, mindset, and dance industry mentorship—I learned so much working with Kevin and truly felt the difference this season. He helped me get in the right headspace, and I'm so proud of the growth I've made. If you're a dancer without an industry mentor yet—trust me, you need 1:1 Dance Consult in your corner. It's a game-changer."
+                },
+                {
+                    name: "Autumn Thom",
+                    quote: "Kevin Frey has guided and shaped my understanding of the industry and given me access to connections I never thought I'd have. He not only believes in you—he works with you until you discover who you are as a true artist. Such an incredible human."
+                }
+            ];
+
+            class TestimonialsCarousel {
+                constructor(container, testimonials) {
+                    this.container = container;
+                    this.testimonials = testimonials;
+                    this.currentIndex = 0;
+                    this.isAutoPlaying = true;
+                    this.autoPlayInterval = null;
+                    this.touchStartX = 0;
+                    this.touchEndX = 0;
+
+                    this.init();
+                }
+
+                init() {
+                    this.render();
+                    this.bindEvents();
+                    this.startAutoPlay();
+                }
+
+                render() {
+                    const slidesHTML = this.testimonials.map((testimonial, index) => {
+                        const initials = testimonial.name.split(' ').map(n => n[0]).join('');
+                        const colors = ['electricBlue', 'brightRed', 'hotMagenta', 'neonYellow', 'sunsetOrange', 'deepViolet'];
+                        const colorClass = colors[index % colors.length];
+
+                        return `
+                            <div class="carousel-slide ${index === 0 ? 'active' : ''}" 
+                                 role="group" 
+                                 aria-roledescription="slide" 
+                                 aria-label="Testimonial ${index + 1} of ${this.testimonials.length}"
+                                 data-index="${index}">
+                                <div class="animated-gradient-ring">
+                                    <div class="testimonial-card p-8 md:p-10">
+                                        <p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
+                                            "${testimonial.quote}"
+                                        </p>
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-10 h-10 rounded-full bg-${colorClass}/10 flex items-center justify-center flex-shrink-0">
+                                                <span class="text-${colorClass} font-semibold text-sm">${initials}</span>
+                                            </div>
+                                            <div>
+                                                <p class="font-semibold text-gray-800">${testimonial.name}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    }).join('');
+
+                    const dotsHTML = this.testimonials.map((_, index) =>
+                        `<button class="carousel-dot ${index === 0 ? 'active' : ''}" 
+                                 aria-label="Go to testimonial ${index + 1}"
+                                 aria-controls="carousel-slide-${index}"
+                                 data-index="${index}"></button>`
+                    ).join('');
+
+                    this.container.innerHTML = `
+                        <div class="carousel-wrapper" 
+                             role="region" 
+                             aria-roledescription="carousel" 
+                             aria-label="Client testimonials"
+                             tabindex="0">
+                            <div class="carousel-slides-container">
+                                ${slidesHTML}
+                            </div>
+                            
+                            <div class="carousel-controls-wrapper relative">
+                                <button class="carousel-btn carousel-prev w-11 h-11 rounded-full border bg-white/80 backdrop-blur-md shadow-sm flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-electricBlue focus:ring-offset-2" 
+                                        aria-label="Previous testimonial"
+                                        aria-controls="testimonials-carousel">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                                    </svg>
+                                </button>
+                                
+                                <button class="carousel-btn carousel-next w-11 h-11 rounded-full border bg-white/80 backdrop-blur-md shadow-sm flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-electricBlue focus:ring-offset-2" 
+                                        aria-label="Next testimonial"
+                                        aria-controls="testimonials-carousel">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                    </svg>
+                                </button>
+                                
+                                <div class="carousel-dots flex items-center justify-center gap-2 order-2 flex-1">
+                                    ${dotsHTML}
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-cta mt-6 flex justify-center">
+                                <a href="#booking" class="gradient-btn px-8 py-3 font-semibold text-gray-800 rounded-full">
+                                    Book a Consultation
+                                </a>
+                            </div>
+                        </div>
+                    `;
+
+                    // Add dynamic styles
+                    this.addStyles();
+                }
+
+                addStyles() {
+                    if (document.getElementById('carousel-styles')) return;
+
+                    const styles = document.createElement('style');
+                    styles.id = 'carousel-styles';
+                    styles.textContent = `
+                        .carousel-wrapper {
+                            outline: none;
+                        }
+                        
+                        .carousel-wrapper:focus-visible {
+                            outline: 2px solid #00CFFF;
+                            outline-offset: 4px;
+                            border-radius: 8px;
+                        }
+                        
+                        .carousel-slides-container {
+                            position: relative;
+                            overflow: hidden;
+                            min-height: 300px;
+                            width: 100%;
+                        }
+                        
+                        .carousel-slide {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            opacity: 0;
+                            transform: translateX(20px);
+                            transition: all 350ms cubic-bezier(0.16, 1, 0.3, 1);
+                            pointer-events: none;
+                            visibility: hidden;
+                        }
+                        
+                        .carousel-slide.active {
+                            opacity: 1;
+                            transform: translateX(0);
+                            pointer-events: auto;
+                            visibility: visible;
+                        }
+                        
+                        .carousel-controls-wrapper {
+                            position: relative;
+                            height: 80px;
+                            width: 100%;
+                            margin-top: 2rem;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                        }
+                        
+                        .carousel-btn {
+                            color: #4b5563;
+                            transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1);
+                            cursor: pointer;
+                            z-index: 10;
+                            position: relative;
+                            flex-shrink: 0;
+                        }
+                        
+                        .carousel-prev {
+                            order: 1;
+                        }
+                        
+                        .carousel-next {
+                            order: 3;
+                        }
+                        
+                        .carousel-btn:hover {
+                            background: rgba(255, 255, 255, 0.95);
+                            transform: translateY(-1px);
+                            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                            color: #00CFFF;
+                        }
+                        
+                        .carousel-btn:active {
+                            transform: translateY(-1px) scale(0.95);
+                        }
+                        
+                        .carousel-dot {
+                            width: 8px;
+                            height: 8px;
+                            border-radius: 50%;
+                            border: none;
+                            background: rgba(0, 0, 0, 0.2);
+                            transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1);
+                            cursor: pointer;
+                        }
+                        
+                        .carousel-dot.active {
+                            background: #00CFFF;
+                            transform: scale(1.2);
+                        }
+                        
+                        .carousel-dot:hover {
+                            background: #00CFFF;
+                            transform: scale(1.1);
+                        }
+                        
+                        .carousel-dot:focus-visible {
+                            outline: 2px solid #00CFFF;
+                            outline-offset: 2px;
+                        }
+                        
+                        @media (max-width: 768px) {
+                            .carousel-controls {
+                                flex-direction: column;
+                                gap: 1rem;
+                            }
+                            
+                            .carousel-btn {
+                                order: 1;
+                            }
+                            
+                            .carousel-dots {
+                                order: 0;
+                            }
+                        }
+                    `;
+
+                    document.head.appendChild(styles);
+                }
+
+                bindEvents() {
+                    // Navigation buttons
+                    this.container.querySelector('.carousel-prev').addEventListener('click', () => this.prev());
+                    this.container.querySelector('.carousel-next').addEventListener('click', () => this.next());
+
+                    // Dots navigation
+                    this.container.querySelectorAll('.carousel-dot').forEach((dot, index) => {
+                        dot.addEventListener('click', () => this.goToSlide(index));
+                    });
+
+                    // Keyboard navigation
+                    this.container.addEventListener('keydown', (e) => {
+                        if (e.key === 'ArrowLeft') {
+                            e.preventDefault();
+                            this.prev();
+                        } else if (e.key === 'ArrowRight') {
+                            e.preventDefault();
+                            this.next();
+                        }
+                    });
+
+                    // Pause on hover and focus
+                    this.container.addEventListener('mouseenter', () => this.pauseAutoPlay());
+                    this.container.addEventListener('mouseleave', () => this.resumeAutoPlay());
+                    this.container.addEventListener('focusin', () => this.pauseAutoPlay());
+                    this.container.addEventListener('focusout', () => this.resumeAutoPlay());
+
+                    // Touch/swipe support
+                    this.container.addEventListener('touchstart', (e) => {
+                        this.touchStartX = e.changedTouches[0].screenX;
+                    });
+
+                    this.container.addEventListener('touchend', (e) => {
+                        this.touchEndX = e.changedTouches[0].screenX;
+                        this.handleSwipe();
+                    });
+
+                    // Window resize handler
+                    window.addEventListener('resize', () => this.recalculateHeight());
+
+                    // Initial height calculation with multiple attempts for stability
+                    setTimeout(() => this.updateHeight(), 100);
+                    setTimeout(() => this.updateHeight(), 500);
+                    setTimeout(() => this.updateHeight(), 1000);
+                }
+
+                handleSwipe() {
+                    const swipeThreshold = 50;
+                    const diff = this.touchStartX - this.touchEndX;
+
+                    if (Math.abs(diff) > swipeThreshold) {
+                        if (diff > 0) {
+                            this.next(); // Swipe left = next
+                        } else {
+                            this.prev(); // Swipe right = prev
+                        }
+                    }
+                }
+
+
+
+                updateHeight() {
+                    const slides = this.container.querySelectorAll('.carousel-slide');
+                    const slidesContainer = this.container.querySelector('.carousel-slides-container');
+
+                    if (slides.length && slidesContainer) {
+                        // Store current state
+                        const currentSlideStates = Array.from(slides).map(slide => ({
+                            position: slide.style.position,
+                            opacity: slide.style.opacity,
+                            transform: slide.style.transform
+                        }));
+
+                        // Temporarily show all slides to measure heights
+                        slides.forEach(slide => {
+                            slide.style.position = 'static';
+                            slide.style.opacity = '1';
+                            slide.style.transform = 'none';
+                            slide.style.visibility = 'visible';
+                        });
+
+                        // Force reflow and measure
+                        slidesContainer.offsetHeight;
+
+                        // Find the tallest slide
+                        const heights = Array.from(slides).map(slide => {
+                            const rect = slide.getBoundingClientRect();
+                            return rect.height;
+                        });
+                        const maxHeight = Math.max(...heights);
+
+                        // Restore slide positioning
+                        slides.forEach((slide, index) => {
+                            slide.style.position = 'absolute';
+                            slide.style.visibility = 'visible';
+                            if (index === this.currentIndex) {
+                                slide.style.opacity = '1';
+                                slide.style.transform = 'translateX(0)';
+                                slide.classList.add('active');
+                            } else {
+                                slide.style.opacity = '0';
+                                slide.style.transform = 'translateX(20px)';
+                                slide.classList.remove('active');
+                            }
+                        });
+
+                        // Set fixed height with some padding for safety
+                        slidesContainer.style.height = (maxHeight + 20) + 'px';
+                    }
+                }
+
+                recalculateHeight() {
+                    // Debounced height recalculation for resize events
+                    clearTimeout(this.resizeTimeout);
+                    this.resizeTimeout = setTimeout(() => {
+                        this.updateHeight();
+                    }, 100);
+                }
+
+                goToSlide(index) {
+                    if (index === this.currentIndex) return;
+
+                    const slides = this.container.querySelectorAll('.carousel-slide');
+                    const dots = this.container.querySelectorAll('.carousel-dot');
+
+                    // Update slides with proper state management
+                    slides.forEach((slide, i) => {
+                        if (i === index) {
+                            slide.classList.add('active');
+                            slide.style.opacity = '1';
+                            slide.style.transform = 'translateX(0)';
+                            slide.style.visibility = 'visible';
+                            slide.style.pointerEvents = 'auto';
+                        } else {
+                            slide.classList.remove('active');
+                            slide.style.opacity = '0';
+                            slide.style.transform = 'translateX(20px)';
+                            slide.style.visibility = 'hidden';
+                            slide.style.pointerEvents = 'none';
+                        }
+                    });
+
+                    // Update dots
+                    dots.forEach((dot, i) => {
+                        dot.classList.toggle('active', i === index);
+                    });
+
+                    this.currentIndex = index;
+                }
+
+                next() {
+                    const nextIndex = (this.currentIndex + 1) % this.testimonials.length;
+                    this.goToSlide(nextIndex);
+                }
+
+                prev() {
+                    const prevIndex = (this.currentIndex - 1 + this.testimonials.length) % this.testimonials.length;
+                    this.goToSlide(prevIndex);
+                }
+
+                startAutoPlay() {
+                    this.clearAutoPlay();
+                    if (!this.isAutoPlaying) return;
+
+                    this.autoPlayInterval = setInterval(() => {
+                        if (this.isAutoPlaying) {
+                            this.next();
+                        }
+                    }, 5000); // Consistent 5 second timing
+                }
+
+                clearAutoPlay() {
+                    if (this.autoPlayInterval) {
+                        clearInterval(this.autoPlayInterval);
+                        this.autoPlayInterval = null;
+                    }
+                }
+
+                pauseAutoPlay() {
+                    this.isAutoPlaying = false;
+                    this.clearAutoPlay();
+                }
+
+                resumeAutoPlay() {
+                    if (!this.isAutoPlaying) {
+                        this.isAutoPlaying = true;
+                        this.startAutoPlay();
+                    }
+                }
+            }
+
+            // Initialize carousel
+            const carouselContainer = document.getElementById('testimonials-carousel');
+            if (carouselContainer) {
+                new TestimonialsCarousel(carouselContainer, TESTIMONIALS);
+            }
+        });
+    </script>
+<script>
+        (function () {
+            // Show thank-you if redirected back with ?subscribed=1
+            const params = new URLSearchParams(window.location.search);
+            if (params.get('subscribed') === '1') {
+                const el = document.getElementById('nl-thanks');
+                if (el) el.classList.remove('hidden');
+            }
+            // Disable submit until email is valid
+            const email = document.getElementById('nl-email');
+            const form = email ? email.form : null;
+            const btn = form ? form.querySelector('button[type="submit"]') : null;
+            function toggle() {
+                if (!btn || !email) return;
+                const ok = email.checkValidity();
+                btn.disabled = !ok;
+                btn.classList.toggle('opacity-60', !ok);
+                btn.classList.toggle('cursor-not-allowed', !ok);
+            }
+            email && email.addEventListener('input', toggle);
+            toggle();
+        })();
+    </script>
+<script>(function () {function c() {var b = a.contentDocument || a.contentWindow.document; if (b) {var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'967ac22da7f627dd',t:'MTc1Mzk0MDQwMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d)} } if (document.body) {var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else {var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) {e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c())}} } })();</script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  document.querySelectorAll('.external-icon').forEach(function(el){
+    el.addEventListener('touchend', function(e){
+      e.preventDefault();
+      window.open(el.href, '_blank');
+    }, false);
+  });
+});
+</script>
+<!-- Calendly Inline Popup Setup -->
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
+<script async="" src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
+<style>
+  @keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+#danceconsult-button {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  opacity: 0.7; /* Always translucent */
+  backdrop-filter: blur(14px);
+  background:
+    linear-gradient(90deg, #00CFFF, #FF7A00, #FF375F, #FF00FF, #FFE500, #8A2BE2), /* moving gradient */
+    rgba(255,255,255,0.08); /* glass layer */
+  background-blend-mode: overlay;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #ffffff;
+  font-weight: 600;
+  padding: 14px 28px;
+  font-size: 15px;
+  border-radius: 30px;
+  z-index: 9999;
+  cursor: pointer;
+  transition: opacity 0.3s cubic-bezier(.4,0,.2,1);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  font-family: 'Inter', sans-serif;
+  background-size: 400% 400%;
+  animation: gradientMove 8s ease-in-out infinite alternate;
+}
+#danceconsult-button:hover {
+  opacity: 1; /* More solid on hover */
+}
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+  @media (max-width: 768px) {
+  #danceconsult-button {
+    padding: 10px 18px;
+    font-size: 13px;
+    bottom: 16px;
+    right: 12px;
+    }
+  }
+
+body.calendly-popup-open {
+    overflow: hidden !important;
+}
+</style>
+    
+<button id="danceconsult-button" onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/danceconsult' }); return false;">
+  Get Started
+</button>
+
+<script>
+    window.addEventListener('message', function(e) {
+        if (typeof e.data === 'string' && e.data.indexOf('calendly') !== -1) {
+            if (e.data.indexOf('showPopupWidget') !== -1) {
+                document.body.classList.add('calendly-popup-open');
+            }
+            if (e.data.indexOf('closePopupWidget') !== -1) {
+                document.body.classList.remove('calendly-popup-open');
+            }
+        }
+    });
+</script>
+</body>
+</html>
