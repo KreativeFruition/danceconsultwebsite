@@ -654,7 +654,6 @@
     </style>
 </meta></meta></head>
 <body class="font-sans text-gray-800">
-<div class="calendly-scrollbar-cover"></div>
 <!-- Ambient background gradient -->
 <div class="ambient-background" id="ambient-background"></div>
 <!-- Navigation -->
@@ -1126,9 +1125,12 @@
 </div>
 <!-- Book Button -->
 <div class="text-center">
-<a class="gradient-btn px-8 py-3 font-semibold text-gray-800 inline-block" href="#" id="calendly-button" onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/danceconsult' }); return false;" target="_blank">
-                                Book Now
-                            </a>
+<a class="gradient-btn px-8 py-3 font-semibold text-gray-800 inline-block"
+   href="#"
+   onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/danceconsult' }); return false;"
+   id="calendly-button">
+   Book Now
+</a>
 </div>
 </div>
 </div>
@@ -2057,56 +2059,12 @@ document.addEventListener('DOMContentLoaded', function(){
     right: 12px;
     }
   }
-
-body.calendly-popup-open {
-    overflow: hidden !important;
-}
-
-.calendly-scrollbar-cover {
-    display: none;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 18px; /* Adjust width as needed for scrollbar */
-    height: 100vh;
-    background: #fff; /* Or match your site background */
-    z-index: 99999;
-    pointer-events: none;
-    transition: opacity 0.2s;
-}
-body.calendly-popup-open .calendly-scrollbar-cover {
-    display: block;
-}
 </style>
     
 <button id="danceconsult-button" onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/danceconsult' }); return false;">
   Get Started
 </button>
 
-<script>
-    window.addEventListener('message', function(e) {
-        if (typeof e.data === 'string' && e.data.indexOf('calendly') !== -1) {
-            if (e.data.indexOf('showPopupWidget') !== -1) {
-                document.body.classList.add('calendly-popup-open');
-            }
-            if (e.data.indexOf('closePopupWidget') !== -1) {
-                document.body.classList.remove('calendly-popup-open');
-            }
-        }
-    });
-</script>
-
-<script>
-    window.addEventListener('message', function(e) {
-        if (typeof e.data === 'string' && e.data.indexOf('calendly') !== -1) {
-            if (e.data.indexOf('showPopupWidget') !== -1) {
-                document.body.classList.add('calendly-popup-open');
-            }
-            if (e.data.indexOf('closePopupWidget') !== -1) {
-                document.body.classList.remove('calendly-popup-open');
-            }
-        }
-    });
-</script>
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
 </body>
 </html>
