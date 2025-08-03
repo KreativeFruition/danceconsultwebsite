@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>1:1 Dance Consult | Creative Careers Start Here</title>
-<!-- Social Sharing Preview -->
 <meta content="1:1 Dance Consult | Creative Careers Start Here" property="og:title">
 <meta content="Strategy, support, and tools for dancers, choreographers, and creative professionals ready to level up." property="og:description">
 <meta content="https://i.imgur.com/36ZkhMb.png" property="og:image"/>
@@ -41,7 +39,6 @@
             background-color: #ffffff;
             overflow-x: hidden;
         }
-
         /* Ambient background gradient */
         .ambient-background {
             position: fixed;
@@ -52,7 +49,6 @@
             z-index: -10;
             opacity: 0.15;
         }
-
         /* Gradient text effect */
         .gradient-text {
             background: linear-gradient(90deg, #00CFFF, #FF375F, #FF7A00, #FF00FF, #FFE500, #8A2BE2);
@@ -62,7 +58,6 @@
             background-size: 300% auto;
             animation: gradientShift 15s ease infinite alternate;
         }
-
         /* Gradient border for content blocks */
         .gradient-border {
             position: relative;
@@ -72,7 +67,6 @@
             backdrop-filter: blur(10px);
             overflow: hidden;
         }
-
         .gradient-border::before {
             content: '';
             position: absolute;
@@ -88,7 +82,6 @@
             -webkit-mask-composite: xor;
             mask-composite: exclude;
         }
-
         /* Circular gradient border for logo */
         .circular-gradient-border {
             position: relative;
@@ -103,7 +96,6 @@
             justify-content: center;
             margin: 0 auto;
         }
-
         .circular-gradient-border::before {
             content: '';
             position: absolute;
@@ -119,7 +111,6 @@
             -webkit-mask-composite: xor;
             mask-composite: exclude;
         }
-
         /* Photo gradient border */
         .photo-gradient-border {
             position: relative;
@@ -131,7 +122,6 @@
             align-items: center;
             justify-content: center;
         }
-
         .photo-gradient-border::before {
             content: '';
             position: absolute;
@@ -148,20 +138,17 @@
             mask-composite: exclude;
             z-index: 1;
         }
-
         .photo-gradient-border img {
             border-radius: 9px;
             position: relative;
             z-index: 0;
         }
-
         /* Glass card effect */
         .glass-card {
             background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(10px);
             border-radius: 16px;
         }
-
         /* Gradient button */
         .gradient-btn {
             position: relative;
@@ -171,7 +158,6 @@
             overflow: hidden;
             transition: all 0.4s ease;
         }
-
         .gradient-btn::before {
             content: '';
             position: absolute;
@@ -188,18 +174,15 @@
             mask-composite: exclude;
             z-index: -1;
         }
-
         .gradient-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
-
         /* Gradient underline */
         .gradient-underline {
             position: relative;
             display: inline-block;
         }
-
         .gradient-underline::after {
             content: '';
             position: absolute;
@@ -211,13 +194,11 @@
             background-size: 300% auto;
             animation: gradientShift 15s ease infinite alternate;
         }
-
         /* Navigation link hover effect */
         .nav-link {
             position: relative;
             transition: all 0.3s ease;
         }
-
         .nav-link::after {
             content: '';
             position: absolute;
@@ -230,91 +211,73 @@
             animation: gradientShift 15s ease infinite alternate;
             transition: width 0.3s ease;
         }
-
         .nav-link:hover::after {
             width: 100%;
         }
-
         .nav-link.active::after {
             width: 100%;
         }
-
         /* Feature card hover effect */
         .feature-card {
             transition: all 0.4s ease;
         }
-
         .feature-card:hover {
             transform: translateY(-5px);
         }
-
         /* Animations */
         @keyframes gradientShift {
             0% {
                 background-position: 0% 50%;
             }
-
             50% {
                 background-position: 100% 50%;
             }
-
             100% {
                 background-position: 0% 50%;
             }
         }
-
         @keyframes float {
             0% {
                 transform: translateY(0px);
             }
-
             50% {
                 transform: translateY(-15px);
             }
-
             100% {
                 transform: translateY(0px);
             }
         }
-
         .float-animation {
             animation: float 12s ease-in-out infinite;
         }
-
         .float-animation-delay {
             animation: float 15s ease-in-out 2s infinite;
         }
-
         /* Apple-inspired testimonial section */
         .testimonial-container {
             position: relative;
             padding: 60px 0;
         }
-
         .testimonial-item {
             opacity: 0;
             transform: translateY(40px);
             transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
             margin-bottom: 80px;
         }
-
         .testimonial-item.visible {
             opacity: 1;
             transform: translateY(0);
         }
-
         .testimonial-content {
             position: relative;
             z-index: 1;
         }
-
         .testimonial-quote {
             font-size: 1.25rem;
             line-height: 1.6;
             font-weight: 400;
             position: relative;
         }
-
         .testimonial-quote::before {
             content: '"';
             font-size: 4rem;
@@ -324,13 +287,11 @@
             left: -1.5rem;
             opacity: 0.15;
         }
-
         .testimonial-author {
             margin-top: 1.5rem;
             display: flex;
             align-items: center;
         }
-
         .testimonial-avatar {
             width: 48px;
             height: 48px;
@@ -340,17 +301,14 @@
             justify-content: center;
             margin-right: 1rem;
         }
-
         .testimonial-name {
             font-weight: 600;
         }
-
         /* Animated gradient ring for testimonial cards */
         .animated-gradient-ring {
             position: relative;
             border-radius: 1rem;
         }
-
         .animated-gradient-ring::before {
             content: '';
             position: absolute;
@@ -367,7 +325,6 @@
             mask-composite: exclude;
             z-index: -1;
         }
-
         .testimonial-card {
             background: rgba(255, 255, 255, 0.75);
             backdrop-filter: blur(10px);
@@ -377,28 +334,23 @@
             position: relative;
             z-index: 1;
         }
-
         /* Focus option */
         .focus-option {
             cursor: pointer;
             transition: all 0.3s ease;
             border: 2px solid transparent;
         }
-
         .focus-option:hover {
             transform: translateY(-3px);
         }
-
         .focus-option.selected {
             border-color: #00CFFF;
             background-color: rgba(0, 207, 255, 0.05);
         }
-
         /* Booking process steps */
         .process-step {
             position: relative;
         }
-
         .process-step:not(:last-child)::after {
             content: '';
             position: absolute;
@@ -409,7 +361,6 @@
             background: linear-gradient(90deg, #00CFFF, #FF375F);
             z-index: 0;
         }
-
         @media (max-width: 768px) {
             .process-step:not(:last-child)::after {
                 top: auto;
@@ -420,14 +371,12 @@
                 height: 2rem;
             }
         }
-
         /* Custom select styling */
         .custom-select {
             position: relative;
             display: inline-block;
             width: 100%;
         }
-
         .custom-select select {
             appearance: none;
             -webkit-appearance: none;
@@ -438,7 +387,6 @@
             background-color: white;
             cursor: pointer;
         }
-
         .custom-select::after {
             content: '';
             position: absolute;
@@ -452,30 +400,24 @@
             border-top: 5px solid #6b7280;
             pointer-events: none;
         }
-
         /* Smooth scroll behavior */
         html {
             scroll-behavior: smooth;
         }
-
         /* Consultant card */
         .consultant-card {
             transition: all 0.3s ease;
         }
-
         .consultant-card:hover {
             transform: translateY(-5px);
         }
-
         .consultant-image {
             transition: all 0.5s ease;
             overflow: hidden;
         }
-
         .consultant-card:hover .consultant-image img {
             transform: scale(1.05);
         }
-
         /* Logo container responsive adjustments */
         @media (max-width: 768px) {
             .circular-gradient-border {
@@ -483,7 +425,6 @@
                 height: 280px;
             }
         }
-
         /* Consultant image responsive adjustments */
         .consultant-image {
             position: relative;
@@ -493,7 +434,6 @@
             /* Creates a square aspect ratio */
             overflow: hidden;
         }
-
         .consultant-image img {
             position: absolute;
             top: 0;
@@ -505,34 +445,29 @@
             /* Focus on face/upper body */
             transition: transform 0.5s ease;
         }
-
         /* Montana's photo specific adjustment - updated to center her better */
         .montana-photo {
             object-position: center top !important;
             /* Default positioning for the new photo */
         }
-
         @media (min-width: 768px) {
             .consultant-image {
                 padding-bottom: 75%;
                 /* More rectangular on desktop */
             }
         }
-
         /* Intro call section styling */
         .intro-call-section {
             background: linear-gradient(135deg, rgba(0, 207, 255, 0.05) 0%, rgba(255, 55, 95, 0.05) 100%);
             border-top: 1px solid rgba(0, 207, 255, 0.1);
             border-bottom: 1px solid rgba(255, 55, 95, 0.1);
         }
-
         .intro-call-icon {
             background: linear-gradient(135deg, #00CFFF, #FF375F);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
         }
-
         /* Morphing blob animation */
         .morphing-blob {
             width: 180px;
@@ -543,7 +478,6 @@
             align-items: center;
             justify-content: center;
         }
-
         .blob {
             position: absolute;
             top: 50%;
@@ -558,7 +492,6 @@
             opacity: 0.8;
             filter: blur(5px);
         }
-
         .blob-core {
             position: absolute;
             top: 50%;
@@ -571,62 +504,51 @@
             opacity: 0.9;
             filter: blur(2px);
         }
-
         .blob-text {
             position: relative;
             z-index: 10;
             font-size: 2.5rem;
             font-weight: bold;
         }
-
         @keyframes morphBlob {
             0% {
                 border-radius: 50%;
                 transform: translate(-50%, -50%) rotate(0deg);
             }
-
             25% {
                 border-radius: 48% 52% 57% 43% / 44% 54% 46% 56%;
                 transform: translate(-50%, -50%) rotate(90deg);
             }
-
             50% {
                 border-radius: 54% 46% 38% 62% / 49% 45% 55% 51%;
                 transform: translate(-50%, -50%) rotate(180deg);
             }
-
             75% {
                 border-radius: 42% 58% 51% 49% / 55% 52% 48% 45%;
                 transform: translate(-50%, -50%) rotate(270deg);
             }
-
             100% {
                 border-radius: 50%;
                 transform: translate(-50%, -50%) rotate(360deg);
             }
         }
-
         .pulse-animation {
             animation: pulse 3s infinite;
         }
-
         @keyframes pulse {
             0% {
                 transform: scale(0.95);
                 box-shadow: 0 0 0 0 rgba(0, 207, 255, 0.4);
             }
-
             50% {
                 transform: scale(1);
                 box-shadow: 0 0 0 10px rgba(0, 207, 255, 0);
             }
-
             100% {
                 transform: scale(0.95);
                 box-shadow: 0 0 0 0 rgba(0, 207, 255, 0);
             }
         }
-
         /* Gradient outline text */
         .gradient-outline-text {
             position: relative;
@@ -634,7 +556,6 @@
             padding: 8px 16px;
             margin: 12px 0;
         }
-
         .gradient-outline-text::before {
             content: '';
             position: absolute;
@@ -654,12 +575,9 @@
     </style>
 </meta></meta></head>
 <body class="font-sans text-gray-800">
-<!-- Ambient background gradient -->
 <div class="ambient-background" id="ambient-background"></div>
-<!-- Navigation -->
 <nav class="fixed w-full bg-white/90 backdrop-blur-xl z-50 shadow-sm">
 <div class="container mx-auto px-4 py-4">
-<!-- Logo and site name -->
 <div class="flex flex-col md:flex-row justify-between items-center">
 <a class="flex items-center mb-4 md:mb-0" href="#home">
 <div class="text-2xl font-bold whitespace-nowrap">
@@ -667,7 +585,6 @@
 <span class="text-gray-800"> Dance Consult</span>
 </div>
 </a>
-<!-- Desktop Navigation -->
 <div class="hidden md:flex space-x-8">
 <a class="nav-link active font-medium text-gray-800" href="#home">Home</a>
 <a class="nav-link font-medium text-gray-800" href="#about">About</a>
@@ -677,7 +594,6 @@
 <a class="nav-link font-medium text-gray-800" href="#testimonials">Testimonials</a>
 <a class="nav-link font-medium text-gray-800" href="#contact">Contact</a>
 </div>
-<!-- Mobile Navigation Toggle -->
 <div class="md:hidden">
 <button class="focus:outline-none text-gray-800" id="menu-toggle">
 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -686,7 +602,6 @@
 </button>
 </div>
 </div>
-<!-- Mobile Navigation Menu -->
 <div class="md:hidden hidden pt-4 pb-2" id="mobile-menu">
 <div class="flex flex-col space-y-3">
 <a class="py-2 px-1 nav-link active font-medium text-gray-800" href="#home">Home</a>
@@ -700,7 +615,6 @@
 </div>
 </div>
 </nav>
-<!-- Hero Section -->
 <section class="pt-32 pb-20 px-4" id="home">
 <div class="container mx-auto">
 <div class="flex flex-col md:flex-row items-center justify-between">
@@ -729,7 +643,6 @@
 </div>
 </div>
 </section>
-<!-- About Section (Removed left content block) -->
 <section class="py-20 px-4" id="about">
 <div class="container mx-auto">
 <div class="flex justify-center">
@@ -781,7 +694,6 @@
 </div>
 </div>
 </section>
-<!-- Services Section -->
 <section class="py-20 px-4 bg-gray-50" id="services">
 <div class="container mx-auto">
 <div class="text-center mb-16">
@@ -791,7 +703,6 @@
                 </p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<!-- Service 1 -->
 <div class="gradient-border feature-card">
 <div class="glass-card p-8 h-full">
 <div class="w-16 h-16 rounded-full bg-electricBlue/10 flex items-center justify-center mb-6">
@@ -806,7 +717,6 @@
                         </p>
 </div>
 </div>
-<!-- Service 2 -->
 <div class="gradient-border feature-card">
 <div class="glass-card p-8 h-full">
 <div class="w-16 h-16 rounded-full bg-brightRed/10 flex items-center justify-center mb-6">
@@ -822,7 +732,6 @@
                         </p>
 </div>
 </div>
-<!-- Service 3 -->
 <div class="gradient-border feature-card">
 <div class="glass-card p-8 h-full">
 <div class="w-16 h-16 rounded-full bg-hotMagenta/10 flex items-center justify-center mb-6">
@@ -845,7 +754,6 @@
 </div>
 </div>
 </section>
-<!-- Consultants Section (Updated with website links) -->
 <section class="py-20 px-4" id="consultants">
 <div class="container mx-auto">
 <div class="text-center mb-16">
@@ -855,7 +763,6 @@
                 </p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<!-- Consultant 1: Kevin Frey (Updated with correct website link) -->
 <div class="consultant-card">
 <div class="gradient-border">
 <div class="glass-card p-6">
@@ -895,7 +802,6 @@
 </div>
 </div>
 </div>
-<!-- Consultant 2: Montana Efaw (Updated with website link) -->
 <div class="consultant-card">
 <div class="gradient-border">
 <div class="glass-card p-6">
@@ -934,7 +840,6 @@
 </div>
 </div>
 </div>
-<!-- Consultant 3: Caroline Diamond (Updated with website link) -->
 <div class="consultant-card">
 <div class="gradient-border">
 <div class="glass-card p-6">
@@ -993,7 +898,6 @@
 </div>
 </div>
 </section>
-<!-- Booking Section -->
 <section class="py-20 px-4 bg-gray-50" id="booking">
 <div class="container mx-auto">
 <div class="text-center mb-16">
@@ -1002,11 +906,9 @@
                     Take the first step toward a more fulfilling and sustainable creative career.
                 </p>
 </div>
-<!-- How It Works Section -->
 <div class="mb-16">
 <h3 class="text-2xl font-bold mb-8 text-center">How It Works</h3>
 <div class="flex flex-col md:flex-row justify-center items-start space-y-8 md:space-y-0 md:space-x-8">
-<!-- Step 1 -->
 <div class="process-step flex flex-col items-center text-center md:w-1/3">
 <div class="w-16 h-16 rounded-full bg-electricBlue/10 flex items-center justify-center mb-4">
 <svg class="w-8 h-8 text-electricBlue" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -1019,7 +921,6 @@
                             Select the area where you'd like guidance and support for your creative career.
                         </p>
 </div>
-<!-- Step 2 -->
 <div class="process-step flex flex-col items-center text-center md:w-1/3">
 <div class="w-16 h-16 rounded-full bg-brightRed/10 flex items-center justify-center mb-4">
 <svg class="w-8 h-8 text-brightRed" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -1032,7 +933,6 @@
                             Choose the industry expert who best matches your needs and goals.
                         </p>
 </div>
-<!-- Step 3 -->
 <div class="process-step flex flex-col items-center text-center md:w-1/3">
 <div class="w-16 h-16 rounded-full bg-hotMagenta/10 flex items-center justify-center mb-4">
 <svg class="w-8 h-8 text-hotMagenta" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -1047,16 +947,13 @@
 </div>
 </div>
 </div>
-<!-- Booking Form Section -->
 <div class="max-w-4xl mx-auto">
 <div class="gradient-border">
 <div class="glass-card p-8">
 <h3 class="text-2xl font-bold mb-6 text-center">Book Your Session</h3>
-<!-- Focus Options -->
 <div class="mb-8">
 <h4 class="text-lg font-semibold mb-4">1. Choose Your Focus</h4>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-<!-- Focus Option 1 -->
 <div class="focus-option p-4 rounded-lg border border-gray-200" data-focus="career-strategy">
 <div class="w-12 h-12 rounded-full bg-electricBlue/10 flex items-center justify-center mb-3">
 <svg class="w-6 h-6 text-electricBlue" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -1069,7 +966,6 @@
                                         Navigate your next career move with confidence
                                     </p>
 </div>
-<!-- Focus Option 2 -->
 <div class="focus-option p-4 rounded-lg border border-gray-200" data-focus="audition-prep">
 <div class="w-12 h-12 rounded-full bg-brightRed/10 flex items-center justify-center mb-3">
 <svg class="w-6 h-6 text-brightRed" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -1082,7 +978,6 @@
                                         Prepare for success in your next audition
                                     </p>
 </div>
-<!-- Focus Option 3 -->
 <div class="focus-option p-4 rounded-lg border border-gray-200" data-focus="business-development">
 <div class="w-12 h-12 rounded-full bg-hotMagenta/10 flex items-center justify-center mb-3">
 <svg class="w-6 h-6 text-hotMagenta" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -1095,7 +990,6 @@
                                         Build a sustainable business model for your creative work
                                     </p>
 </div>
-<!-- Focus Option 4 -->
 <div class="focus-option p-4 rounded-lg border border-gray-200" data-focus="digital-marketing">
 <div class="w-12 h-12 rounded-full bg-neonYellow/10 flex items-center justify-center mb-3">
 <svg class="w-6 h-6 text-neonYellow" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -1110,7 +1004,6 @@
 </div>
 </div>
 </div>
-<!-- Consultant Selection (Updated with actual consultants) -->
 <div class="mb-8">
 <h4 class="text-lg font-semibold mb-4">2. Choose Your Consultant</h4>
 <div class="custom-select">
@@ -1123,7 +1016,6 @@
 </select>
 </div>
 </div>
-<!-- Book Button -->
 <div class="text-center">
 <a class="gradient-btn px-8 py-3 font-semibold text-gray-800 inline-block"
    href="#"
@@ -1137,7 +1029,6 @@
 </div>
 </div>
 </section>
-<!-- Intro Call Section (UPDATED with morphing blob and gradient text) -->
 <section class="py-16 px-4 intro-call-section" id="intro-call">
 <div class="container mx-auto">
 <div class="max-w-4xl mx-auto">
@@ -1173,7 +1064,6 @@
 </div>
 </div>
 </section>
-<!-- Testimonials Section -->
 <section class="py-20 px-4" id="testimonials">
 <div class="container mx-auto">
 <div class="text-center mb-16">
@@ -1182,11 +1072,8 @@
                     Hear from creative professionals who have transformed their careers with our guidance.
                 </p>
 </div>
-<!-- Testimonials Carousel Container -->
 <div class="max-w-4xl mx-auto" id="testimonials-carousel">
-<!-- Carousel will be rendered here by JavaScript -->
 </div>
-<!-- Fallback for users without JavaScript -->
 <noscript>
 <div class="max-w-4xl mx-auto space-y-8">
 <div class="animated-gradient-ring">
@@ -1248,7 +1135,6 @@
 </noscript>
 </div>
 </section>
-<!-- Newsletter Section -->
 <section class="py-20 px-4" id="newsletter">
 <div class="container mx-auto max-w-3xl">
 <div class="animated-gradient-ring rounded-2xl p-1">
@@ -1257,9 +1143,7 @@
 <p class="text-gray-600 mb-8 max-w-2xl mx-auto">Occasional insights, tools, and updates for creative
                         careers. No spam—ever.</p>
 <form action="https://formspree.io/f/mblkkpwa" aria-label="Newsletter sign-up" class="mx-auto flex flex-col sm:flex-row items-stretch gap-3 max-w-xl" method="POST">
-<!-- Honeypot to reduce spam -->
 <input autocomplete="off" class="hidden" name="website" tabindex="-1" type="text"/>
-<!-- Redirect after submit -->
 <input name="_next" type="hidden" value="/?subscribed=1#newsletter"/>
 <label class="sr-only" for="nl-email">Email address</label>
 <input autocomplete="email" class="flex-1 rounded-full border border-gray-300 bg-white/80 backdrop-blur px-5 py-3 focus:outline-none focus:ring focus:ring-electricBlue/30 text-gray-800" id="nl-email" inputmode="email" name="email" placeholder="you@example.com" required="" type="email">
@@ -1273,7 +1157,6 @@
 </div>
 </div>
 </section>
-<!-- Contact Section -->
 <section class="py-20 px-4 bg-gray-50" id="contact">
 <div class="container mx-auto">
 <div class="text-center mb-16">
@@ -1353,7 +1236,6 @@
 </div>
 </div>
 </section>
-<!-- Footer -->
 <footer class="py-12 px-4 bg-gray-50">
 <div class="container mx-auto">
 <div class="flex flex-col md:flex-row justify-between items-center">
@@ -1389,110 +1271,84 @@
             const canvas = document.createElement('canvas');
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
-
             const ctx = canvas.getContext('2d');
             const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-
             gradient.addColorStop(0, '#00CFFF20');
             gradient.addColorStop(0.2, '#FF375F20');
             gradient.addColorStop(0.4, '#FF7A0020');
             gradient.addColorStop(0.6, '#FF00FF20');
             gradient.addColorStop(0.8, '#FFE50020');
             gradient.addColorStop(1, '#8A2BE220');
-
             ctx.fillStyle = gradient;
             ctx.fillRect(0, 0, canvas.width, canvas.height);
-
             const ambientBg = document.getElementById('ambient-background');
             ambientBg.style.backgroundImage = `url(${canvas.toDataURL()})`;
         };
-
         createAmbientBackground();
         window.addEventListener('resize', createAmbientBackground);
-
         // Mobile menu toggle
         const menuToggle = document.getElementById('menu-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
-
         menuToggle.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
-
         // Focus option selection
         const focusOptions = document.querySelectorAll('.focus-option');
         let selectedFocus = null;
-
         focusOptions.forEach(option => {
             option.addEventListener('click', () => {
                 // Remove selected class from all options
                 focusOptions.forEach(opt => opt.classList.remove('selected'));
-
                 // Add selected class to clicked option
                 option.classList.add('selected');
-
                 // Store selected focus
                 selectedFocus = option.dataset.focus;
-
                 // Update booking URL with selected focus
                 updateBookingUrl();
             });
         });
-
         // Consultant selection
         const consultantSelect = document.getElementById('consultant-select');
         let selectedConsultant = null;
-
         consultantSelect.addEventListener('change', () => {
             selectedConsultant = consultantSelect.value;
-
             // Update booking URL with selected consultant
             updateBookingUrl();
         });
-
         // Update booking URL based on selections
         function updateBookingUrl() {
             const bookButton = document.getElementById('calendly-button');
             let baseUrl = 'https://www.calendly.com/danceconsult';
-
             // Add parameters if selections are made
             if (selectedFocus || selectedConsultant) {
                 baseUrl += '?';
-
                 if (selectedFocus) {
                     baseUrl += `focus=${selectedFocus}`;
                 }
-
                 if (selectedConsultant) {
                     baseUrl += selectedFocus ? `&consultant=${selectedConsultant}` : `consultant=${selectedConsultant}`;
                 }
             }
-
             bookButton.href = baseUrl;
         }
-
         // Contact form submission
         const sendMessageBtn = document.getElementById('send-message-btn');
-
         sendMessageBtn.addEventListener('click', () => {
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value;
-
             // Simple validation
             if (!name || !email || !subject || !message) {
                 alert('Please fill in all fields.');
                 return;
             }
-
             // In a real implementation, you would send this data to a server
             // For now, just show a success message
             alert('Thank you for your message! We will get back to you soon.');
-
             // Clear the form
             document.getElementById('contact-form').reset();
         });
-
         // Apple-style Testimonials Carousel
         document.addEventListener('DOMContentLoaded', function () {
             // Testimonials data ordered for maximum conversion impact
@@ -1547,7 +1403,6 @@
                     quote: "Kevin Frey has guided and shaped my understanding of the industry and given me access to connections I never thought I'd have. He not only believes in you—he works with you until you discover who you are as a true artist. Such an incredible human."
                 }
             ];
-
             class TestimonialsCarousel {
                 constructor(container, testimonials) {
                     this.container = container;
@@ -1557,26 +1412,22 @@
                     this.autoPlayInterval = null;
                     this.touchStartX = 0;
                     this.touchEndX = 0;
-
                     this.init();
                 }
-
                 init() {
                     this.render();
                     this.bindEvents();
                     this.startAutoPlay();
                 }
-
                 render() {
                     const slidesHTML = this.testimonials.map((testimonial, index) => {
                         const initials = testimonial.name.split(' ').map(n => n[0]).join('');
                         const colors = ['electricBlue', 'brightRed', 'hotMagenta', 'neonYellow', 'sunsetOrange', 'deepViolet'];
                         const colorClass = colors[index % colors.length];
-
                         return `
-                            <div class="carousel-slide ${index === 0 ? 'active' : ''}" 
-                                 role="group" 
-                                 aria-roledescription="slide" 
+                            <div class="carousel-slide ${index === 0 ? 'active' : ''}"
+                                 role="group"
+                                 aria-roledescription="slide"
                                  aria-label="Testimonial ${index + 1} of ${this.testimonials.length}"
                                  data-index="${index}">
                                 <div class="animated-gradient-ring">
@@ -1597,46 +1448,40 @@
                             </div>
                         `;
                     }).join('');
-
                     const dotsHTML = this.testimonials.map((_, index) =>
-                        `<button class="carousel-dot ${index === 0 ? 'active' : ''}" 
+                        `<button class="carousel-dot ${index === 0 ? 'active' : ''}"
                                  aria-label="Go to testimonial ${index + 1}"
                                  aria-controls="carousel-slide-${index}"
                                  data-index="${index}"></button>`
                     ).join('');
-
                     this.container.innerHTML = `
-                        <div class="carousel-wrapper" 
-                             role="region" 
-                             aria-roledescription="carousel" 
+                        <div class="carousel-wrapper"
+                             role="region"
+                             aria-roledescription="carousel"
                              aria-label="Client testimonials"
                              tabindex="0">
                             <div class="carousel-slides-container">
                                 ${slidesHTML}
                             </div>
-                            
                             <div class="carousel-controls-wrapper relative">
-                                <button class="carousel-btn carousel-prev w-11 h-11 rounded-full border bg-white/80 backdrop-blur-md shadow-sm flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-electricBlue focus:ring-offset-2" 
+                                <button class="carousel-btn carousel-prev w-11 h-11 rounded-full border bg-white/80 backdrop-blur-md shadow-sm flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-electricBlue focus:ring-offset-2"
                                         aria-label="Previous testimonial"
                                         aria-controls="testimonials-carousel">
                                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                                     </svg>
                                 </button>
-                                
-                                <button class="carousel-btn carousel-next w-11 h-11 rounded-full border bg-white/80 backdrop-blur-md shadow-sm flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-electricBlue focus:ring-offset-2" 
+                                <button class="carousel-btn carousel-next w-11 h-11 rounded-full border bg-white/80 backdrop-blur-md shadow-sm flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-electricBlue focus:ring-offset-2"
                                         aria-label="Next testimonial"
                                         aria-controls="testimonials-carousel">
                                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                                     </svg>
                                 </button>
-                                
                                 <div class="carousel-dots flex items-center justify-center gap-2 order-2 flex-1">
                                     ${dotsHTML}
                                 </div>
                             </div>
-                            
                             <div class="carousel-cta mt-6 flex justify-center">
                                 <a href="#booking" class="gradient-btn px-8 py-3 font-semibold text-gray-800 rounded-full">
                                     Book a Consultation
@@ -1644,34 +1489,28 @@
                             </div>
                         </div>
                     `;
-
                     // Add dynamic styles
                     this.addStyles();
                 }
-
                 addStyles() {
                     if (document.getElementById('carousel-styles')) return;
-
                     const styles = document.createElement('style');
                     styles.id = 'carousel-styles';
                     styles.textContent = `
                         .carousel-wrapper {
                             outline: none;
                         }
-                        
                         .carousel-wrapper:focus-visible {
                             outline: 2px solid #00CFFF;
                             outline-offset: 4px;
                             border-radius: 8px;
                         }
-                        
                         .carousel-slides-container {
                             position: relative;
                             overflow: hidden;
                             min-height: 300px;
                             width: 100%;
                         }
-                        
                         .carousel-slide {
                             position: absolute;
                             top: 0;
@@ -1683,14 +1522,12 @@
                             pointer-events: none;
                             visibility: hidden;
                         }
-                        
                         .carousel-slide.active {
                             opacity: 1;
                             transform: translateX(0);
                             pointer-events: auto;
                             visibility: visible;
                         }
-                        
                         .carousel-controls-wrapper {
                             position: relative;
                             height: 80px;
@@ -1700,7 +1537,6 @@
                             align-items: center;
                             justify-content: space-between;
                         }
-                        
                         .carousel-btn {
                             color: #4b5563;
                             transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1);
@@ -1709,26 +1545,21 @@
                             position: relative;
                             flex-shrink: 0;
                         }
-                        
                         .carousel-prev {
                             order: 1;
                         }
-                        
                         .carousel-next {
                             order: 3;
                         }
-                        
                         .carousel-btn:hover {
                             background: rgba(255, 255, 255, 0.95);
                             transform: translateY(-1px);
                             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
                             color: #00CFFF;
                         }
-                        
                         .carousel-btn:active {
                             transform: translateY(-1px) scale(0.95);
                         }
-                        
                         .carousel-dot {
                             width: 8px;
                             height: 8px;
@@ -1738,51 +1569,41 @@
                             transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1);
                             cursor: pointer;
                         }
-                        
                         .carousel-dot.active {
                             background: #00CFFF;
                             transform: scale(1.2);
                         }
-                        
                         .carousel-dot:hover {
                             background: #00CFFF;
                             transform: scale(1.1);
                         }
-                        
                         .carousel-dot:focus-visible {
                             outline: 2px solid #00CFFF;
                             outline-offset: 2px;
                         }
-                        
                         @media (max-width: 768px) {
                             .carousel-controls {
                                 flex-direction: column;
                                 gap: 1rem;
                             }
-                            
                             .carousel-btn {
                                 order: 1;
                             }
-                            
                             .carousel-dots {
                                 order: 0;
                             }
                         }
                     `;
-
                     document.head.appendChild(styles);
                 }
-
                 bindEvents() {
                     // Navigation buttons
                     this.container.querySelector('.carousel-prev').addEventListener('click', () => this.prev());
                     this.container.querySelector('.carousel-next').addEventListener('click', () => this.next());
-
                     // Dots navigation
                     this.container.querySelectorAll('.carousel-dot').forEach((dot, index) => {
                         dot.addEventListener('click', () => this.goToSlide(index));
                     });
-
                     // Keyboard navigation
                     this.container.addEventListener('keydown', (e) => {
                         if (e.key === 'ArrowLeft') {
@@ -1793,36 +1614,29 @@
                             this.next();
                         }
                     });
-
                     // Pause on hover and focus
                     this.container.addEventListener('mouseenter', () => this.pauseAutoPlay());
                     this.container.addEventListener('mouseleave', () => this.resumeAutoPlay());
                     this.container.addEventListener('focusin', () => this.pauseAutoPlay());
                     this.container.addEventListener('focusout', () => this.resumeAutoPlay());
-
                     // Touch/swipe support
                     this.container.addEventListener('touchstart', (e) => {
                         this.touchStartX = e.changedTouches[0].screenX;
                     });
-
                     this.container.addEventListener('touchend', (e) => {
                         this.touchEndX = e.changedTouches[0].screenX;
                         this.handleSwipe();
                     });
-
                     // Window resize handler
                     window.addEventListener('resize', () => this.recalculateHeight());
-
                     // Initial height calculation with multiple attempts for stability
                     setTimeout(() => this.updateHeight(), 100);
                     setTimeout(() => this.updateHeight(), 500);
                     setTimeout(() => this.updateHeight(), 1000);
                 }
-
                 handleSwipe() {
                     const swipeThreshold = 50;
                     const diff = this.touchStartX - this.touchEndX;
-
                     if (Math.abs(diff) > swipeThreshold) {
                         if (diff > 0) {
                             this.next(); // Swipe left = next
@@ -1831,13 +1645,9 @@
                         }
                     }
                 }
-
-
-
                 updateHeight() {
                     const slides = this.container.querySelectorAll('.carousel-slide');
                     const slidesContainer = this.container.querySelector('.carousel-slides-container');
-
                     if (slides.length && slidesContainer) {
                         // Store current state
                         const currentSlideStates = Array.from(slides).map(slide => ({
@@ -1845,7 +1655,6 @@
                             opacity: slide.style.opacity,
                             transform: slide.style.transform
                         }));
-
                         // Temporarily show all slides to measure heights
                         slides.forEach(slide => {
                             slide.style.position = 'static';
@@ -1853,17 +1662,14 @@
                             slide.style.transform = 'none';
                             slide.style.visibility = 'visible';
                         });
-
                         // Force reflow and measure
                         slidesContainer.offsetHeight;
-
                         // Find the tallest slide
                         const heights = Array.from(slides).map(slide => {
                             const rect = slide.getBoundingClientRect();
                             return rect.height;
                         });
                         const maxHeight = Math.max(...heights);
-
                         // Restore slide positioning
                         slides.forEach((slide, index) => {
                             slide.style.position = 'absolute';
@@ -1878,12 +1684,10 @@
                                 slide.classList.remove('active');
                             }
                         });
-
                         // Set fixed height with some padding for safety
                         slidesContainer.style.height = (maxHeight + 20) + 'px';
                     }
                 }
-
                 recalculateHeight() {
                     // Debounced height recalculation for resize events
                     clearTimeout(this.resizeTimeout);
@@ -1891,13 +1695,10 @@
                         this.updateHeight();
                     }, 100);
                 }
-
                 goToSlide(index) {
                     if (index === this.currentIndex) return;
-
                     const slides = this.container.querySelectorAll('.carousel-slide');
                     const dots = this.container.querySelectorAll('.carousel-dot');
-
                     // Update slides with proper state management
                     slides.forEach((slide, i) => {
                         if (i === index) {
@@ -1914,48 +1715,39 @@
                             slide.style.pointerEvents = 'none';
                         }
                     });
-
                     // Update dots
                     dots.forEach((dot, i) => {
                         dot.classList.toggle('active', i === index);
                     });
-
                     this.currentIndex = index;
                 }
-
                 next() {
                     const nextIndex = (this.currentIndex + 1) % this.testimonials.length;
                     this.goToSlide(nextIndex);
                 }
-
                 prev() {
                     const prevIndex = (this.currentIndex - 1 + this.testimonials.length) % this.testimonials.length;
                     this.goToSlide(prevIndex);
                 }
-
                 startAutoPlay() {
                     this.clearAutoPlay();
                     if (!this.isAutoPlaying) return;
-
                     this.autoPlayInterval = setInterval(() => {
                         if (this.isAutoPlaying) {
                             this.next();
                         }
                     }, 5000); // Consistent 5 second timing
                 }
-
                 clearAutoPlay() {
                     if (this.autoPlayInterval) {
                         clearInterval(this.autoPlayInterval);
                         this.autoPlayInterval = null;
                     }
                 }
-
                 pauseAutoPlay() {
                     this.isAutoPlaying = false;
                     this.clearAutoPlay();
                 }
-
                 resumeAutoPlay() {
                     if (!this.isAutoPlaying) {
                         this.isAutoPlaying = true;
@@ -1963,7 +1755,6 @@
                     }
                 }
             }
-
             // Initialize carousel
             const carouselContainer = document.getElementById('testimonials-carousel');
             if (carouselContainer) {
@@ -2005,7 +1796,6 @@ document.addEventListener('DOMContentLoaded', function(){
   });
 });
 </script>
-<!-- Calendly Inline Popup Setup -->
 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
 <script async="" src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
 <style>
@@ -2014,7 +1804,6 @@ document.addEventListener('DOMContentLoaded', function(){
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
   }
-
 #danceconsult-button {
   position: fixed;
   bottom: 24px;
@@ -2050,7 +1839,6 @@ document.addEventListener('DOMContentLoaded', function(){
     background-position: 100% 50%;
   }
 }
-
   @media (max-width: 768px) {
   #danceconsult-button {
     padding: 10px 18px;
@@ -2060,11 +1848,8 @@ document.addEventListener('DOMContentLoaded', function(){
     }
   }
 </style>
-    
 <button id="danceconsult-button" onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/danceconsult' }); return false;">
   Get Started
 </button>
-
-<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
 </body>
 </html>
