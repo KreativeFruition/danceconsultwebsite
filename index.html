@@ -2095,5 +2095,18 @@ body.calendly-popup-open .calendly-scrollbar-cover {
         }
     });
 </script>
+
+<script>
+    window.addEventListener('message', function(e) {
+        if (typeof e.data === 'string' && e.data.indexOf('calendly') !== -1) {
+            if (e.data.indexOf('showPopupWidget') !== -1) {
+                document.body.classList.add('calendly-popup-open');
+            }
+            if (e.data.indexOf('closePopupWidget') !== -1) {
+                document.body.classList.remove('calendly-popup-open');
+            }
+        }
+    });
+</script>
 </body>
 </html>
