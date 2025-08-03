@@ -2056,10 +2056,27 @@ document.addEventListener('DOMContentLoaded', function(){
     right: 12px;
     }
   }
+
+body.calendly-popup-open {
+    overflow: hidden !important;
+}
 </style>
     
 <button id="danceconsult-button" onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/danceconsult' }); return false;">
   Get Started
 </button>
+
+<script>
+    window.addEventListener('message', function(e) {
+        if (typeof e.data === 'string' && e.data.indexOf('calendly') !== -1) {
+            if (e.data.indexOf('showPopupWidget') !== -1) {
+                document.body.classList.add('calendly-popup-open');
+            }
+            if (e.data.indexOf('closePopupWidget') !== -1) {
+                document.body.classList.remove('calendly-popup-open');
+            }
+        }
+    });
+</script>
 </body>
 </html>
