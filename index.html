@@ -407,6 +407,12 @@
         /* Consultant card */
         .consultant-card {
             transition: all 0.3s ease;
+            flex: 0 0 100%;
+        }
+        @media (min-width: 768px) {
+            .consultant-card {
+                flex: 0 0 calc(33.333% - 2rem);
+            }
         }
         .consultant-card:hover {
             transform: translateY(-5px);
@@ -417,6 +423,89 @@
         }
         .consultant-card:hover .consultant-image img {
             transform: scale(1.05);
+        }
+        
+        /* Carousel Styles - Apple-inspired */
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+            padding: 0 60px;
+        }
+        @media (max-width: 768px) {
+            .carousel-container {
+                padding: 0 40px;
+            }
+        }
+        .carousel-track {
+            display: flex;
+            gap: 2rem;
+            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            opacity: 0;
+            pointer-events: none;
+        }
+        .carousel-button.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+        .carousel-button:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .carousel-button:active {
+            transform: translateY(-50%) scale(0.95);
+        }
+        .carousel-button.prev {
+            left: 0;
+        }
+        .carousel-button.next {
+            right: 0;
+        }
+        .carousel-button svg {
+            width: 20px;
+            height: 20px;
+            color: #1f2937;
+        }
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 2rem;
+            padding: 1rem;
+        }
+        .carousel-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .carousel-dot.active {
+            background: linear-gradient(90deg, #00CFFF, #FF375F);
+            transform: scale(1.25);
+        }
+        .carousel-dot:hover:not(.active) {
+            background: rgba(0, 0, 0, 0.4);
         }
         /* Logo container responsive adjustments */
         @media (max-width: 768px) {
@@ -762,7 +851,18 @@
                     Industry experts with real-world experience ready to guide your creative journey.
                 </p>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="carousel-container">
+<button class="carousel-button prev" aria-label="Previous consultant">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
+</svg>
+</button>
+<button class="carousel-button next" aria-label="Next consultant">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path>
+</svg>
+</button>
+<div class="carousel-track">
 <div class="consultant-card">
 <div class="gradient-border">
 <div class="glass-card p-6">
@@ -895,6 +995,8 @@
 </div>
 </div>
 </div>
+</div>
+<div class="carousel-dots"></div>
 </div>
 </div>
 </section>
@@ -1265,7 +1367,7 @@
 </div>
 </div>
 </footer>
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Ambient background gradient
         const createAmbientBackground = () => {
             const canvas = document.createElement('canvas');
@@ -1851,5 +1953,149 @@ document.addEventListener('DOMContentLoaded', function(){
 <button id="danceconsult-button" onclick="Calendly.initPopupWidget({ url: 'https://calendly.com/danceconsult' }); return false;">
   Get Started
 </button>
+<script>
+// Carousel functionality for consultants
+class ConsultantCarousel {
+    constructor() {
+        this.track = document.querySelector('.carousel-track');
+        this.cards = document.querySelectorAll('.consultant-card');
+        this.prevBtn = document.querySelector('.carousel-button.prev');
+        this.nextBtn = document.querySelector('.carousel-button.next');
+        this.dotsContainer = document.querySelector('.carousel-dots');
+        
+        this.currentIndex = 0;
+        this.cardsPerView = this.getCardsPerView();
+        this.maxIndex = Math.max(0, this.cards.length - this.cardsPerView);
+        
+        if (this.track) {
+            this.init();
+        }
+    }
+    
+    getCardsPerView() {
+        return window.innerWidth >= 768 ? 3 : 1;
+    }
+    
+    init() {
+        // Create dots
+        this.createDots();
+        
+        // Add event listeners
+        this.prevBtn.addEventListener('click', () => this.navigate('prev'));
+        this.nextBtn.addEventListener('click', () => this.navigate('next'));
+        
+        // Handle resize
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                this.cardsPerView = this.getCardsPerView();
+                this.maxIndex = Math.max(0, this.cards.length - this.cardsPerView);
+                this.currentIndex = Math.min(this.currentIndex, this.maxIndex);
+                this.updateCarousel();
+                this.createDots();
+            }, 250);
+        });
+        
+        // Touch/swipe support
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        this.track.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        
+        this.track.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            this.handleSwipe(touchStartX, touchEndX);
+        }, { passive: true });
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                this.navigate('prev');
+            } else if (e.key === 'ArrowRight') {
+                this.navigate('next');
+            }
+        });
+        
+        // Initial update
+        this.updateCarousel();
+    }
+    
+    handleSwipe(startX, endX) {
+        const swipeThreshold = 50;
+        const diff = startX - endX;
+        
+        if (Math.abs(diff) > swipeThreshold) {
+            if (diff > 0) {
+                this.navigate('next');
+            } else {
+                this.navigate('prev');
+            }
+        }
+    }
+    
+    createDots() {
+        this.dotsContainer.innerHTML = '';
+        const dotCount = this.cardsPerView === 1 ? this.cards.length : Math.ceil(this.cards.length / this.cardsPerView);
+        
+        for (let i = 0; i < dotCount; i++) {
+            const dot = document.createElement('button');
+            dot.className = 'carousel-dot';
+            dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+            dot.addEventListener('click', () => {
+                this.currentIndex = i * (this.cardsPerView === 1 ? 1 : this.cardsPerView);
+                this.currentIndex = Math.min(this.currentIndex, this.maxIndex);
+                this.updateCarousel();
+            });
+            this.dotsContainer.appendChild(dot);
+        }
+    }
+    
+    navigate(direction) {
+        if (direction === 'prev') {
+            this.currentIndex = Math.max(0, this.currentIndex - (this.cardsPerView === 1 ? 1 : this.cardsPerView));
+        } else {
+            this.currentIndex = Math.min(this.maxIndex, this.currentIndex + (this.cardsPerView === 1 ? 1 : this.cardsPerView));
+        }
+        this.updateCarousel();
+    }
+    
+    updateCarousel() {
+        // Calculate transform based on viewport
+        let translateX = 0;
+        if (this.cardsPerView === 1) {
+            // Mobile view - full width cards
+            translateX = -(this.currentIndex * 100);
+        } else {
+            // Desktop view - 3 cards visible
+            const cardWidth = 33.333;
+            const gapInPercent = 2.67; // Approximate gap in percentage
+            translateX = -(this.currentIndex * (cardWidth + gapInPercent));
+        }
+        
+        this.track.style.transform = `translateX(${translateX}%)`;
+        
+        // Update buttons
+        this.prevBtn.classList.toggle('active', this.currentIndex > 0);
+        this.nextBtn.classList.toggle('active', this.currentIndex < this.maxIndex);
+        
+        // Update dots
+        const dots = this.dotsContainer.querySelectorAll('.carousel-dot');
+        const activeDotIndex = this.cardsPerView === 1 ? this.currentIndex : Math.floor(this.currentIndex / this.cardsPerView);
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === activeDotIndex);
+        });
+    }
+}
+
+// Initialize carousel when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+    if (document.querySelector('.carousel-track')) {
+        new ConsultantCarousel();
+    }
+});
+</script>
 </body>
 </html>
