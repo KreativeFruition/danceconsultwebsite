@@ -64,7 +64,7 @@
             padding: 1px;
             background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(10px);
-            overflow: visible;
+            overflow: hidden;
             isolation: isolate;
         }
         .gradient-border::before {
@@ -414,10 +414,7 @@
                 flex: 0 0 calc(33.333% - 2rem);
             }
         }
-        .consultant-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-}
+        .consultant-card:hover {}
         .consultant-image {
             transition: all 0.5s ease;
             overflow: hidden;
@@ -661,7 +658,42 @@
             mask-composite: exclude;
             z-index: -1;
         }
-    </style>
+    
+/* === Patch: Rounded hover shadow fix for consultant cards === */
+.consultant-card {
+  border-radius: 16px;         /* matches gradient border */
+  overflow: hidden;            /* keeps content clipped */
+  transition: all 0.3s ease;
+}
+
+.consultant-card:hover {}
+
+.photo-gradient-border {
+  overflow: hidden;            /* ensures images respect rounded edges */
+}
+/* === End Patch === */
+
+
+/* === Patch v2: ensure gradient-border clips correctly and inherits radius on hover === */
+.gradient-border { border-radius: 16px; overflow: hidden; }
+.consultant-card:hover .gradient-border { border-radius: 16px; }
+/* === End Patch v2 === */
+
+
+/* === Patch v3: shift hover to rounded gradient wrapper === */
+.consultant-card { border-radius:16px; overflow: visible; }
+
+.consultant-card:hover .gradient-border {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 16px; /* enforce same radius */
+}
+
+.gradient-border { border-radius:16px; overflow:hidden; }
+/* === End Patch v3 === */
+
+</style>
 </meta></meta></head>
 <body class="font-sans text-gray-800">
 <div class="ambient-background" id="ambient-background"></div>
